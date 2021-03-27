@@ -181,8 +181,11 @@ let bosses = [
 
 var bossesWrap = document.getElementById('bosses');
 let total = 0;
-let bossesTotal = 
+let bossesTotal;
 
+bossesTotal = bosses.reduce(function(prev, cur) {
+  return prev + cur.lootDrop.map(item => item.price).reduce((prev, next) => prev + next);
+}, 0).toLocaleString();
 
 bosses.forEach(function(boss) {
     let bossWrap = document.createElement('div');
@@ -194,12 +197,12 @@ bosses.forEach(function(boss) {
     // TEMPLATE BUILD
     let priceRows = boss.lootDrop.map(lootItem => `
         <div class="item-row">
-            <div class="item-name">Item ${lootItem.name}</div>
+            <div class="item-name">${lootItem.name}</div>
             <div class="item-price">${lootItem.price.toLocaleString()}g</div>        
         </div>
     `).join('');
   
-  bossWrap.innerHTML = `
+    bossWrap.innerHTML = `
         <div class="boss-image" style="background-image: url('${boss.image}'"></div>
         <div class="loot-wrapper">
             <div class="boss-title">${boss.name}</div>
