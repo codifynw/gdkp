@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require("express");
 const socket = require("socket.io");
 const mongoose = require('mongoose');
+const PORT = 3000;
 
 // DB setup
 mongoose.connect(process.env.DATABASE_URL, {
@@ -14,7 +15,6 @@ db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Connected to Database'))
 
 // App setup
-const PORT = 3000;
 const app = express();
 const server = app.listen(PORT, function () {
   console.log(`Listening on port ${PORT}`);
@@ -50,3 +50,12 @@ io.on("connection", function (socket) {
     io.emit("chat message", data);
   });
 });
+
+// API
+app.use(express.json())
+
+const subscribersRouter = require('./routes/subscribers')
+app.use('/subscribers', subscribersRouter)
+
+
+
