@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Socket.IO chat</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Rakkas&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="bosses"></div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+
+    let bosses = [
+    {
+        name: 'Noth',
+        image: 'https://wow.zamimg.com/uploads/screenshots/normal/131315-noth-the-plaguebringer.jpg',
+        lootDrop: [{
+            'name': 'item1',
+            'price': 1400
+        },{
+            'name': 'item2',
+            'price': 200
+        }]
+    },
+    {
+        name: 'Heigan',
+        image: 'https://wow.zamimg.com/uploads/screenshots/normal/335872-heigan-the-unclean.jpg',
+        lootDrop: [{
+            'name': 'item1',
+            'price': 2200
+        },{
+            'name': 'item2',
+            'price': 200
+        },{
+            'name': 'item3',
+            'price': 6000
+        }]
+    },
+    {
+        name: 'Loatheb',
+        image: 'https://wow.zamimg.com/uploads/screenshots/normal/120824-loatheb.jpg',
+        lootDrop: [{
+            'name': 'item1',
+            'price': 2100
+        },{
+            'name': 'item2',
+            'price': 600
+        }]
+    },  
+    ]
+
+    var bossesWrap = document.getElementById('bosses');
+    let total = 0;
+    let bossesTotal;
+
+    bossesTotal = bosses.reduce(function(prev, cur) {
+    return prev + cur.lootDrop.map(item => item.price).reduce((prev, next) => prev + next);
+    }, 0).toLocaleString();
+
+    bosses.forEach(function(boss) {
+        let bossWrap = document.createElement('div');
+        bossWrap.className = 'boss-wrap';
+
+        bossTotalGold = boss.lootDrop.map(item => item.price).reduce((prev, next) => prev + next).toLocaleString();
+        console.log(bossTotalGold)
+
+        // TEMPLATE BUILD
+        let priceRows = boss.lootDrop.map(lootItem => `
+            <div class="item-row">
+                <div class="item-name">${lootItem.name}</div>
+                <div class="item-price">${lootItem.price.toLocaleString()}g</div>        
+            </div>
+        `).join('');
+    
+        bossWrap.innerHTML = `
+            <div class="boss-image" style="background-image: url('${boss.image}'"></div>
+            <div class="loot-wrapper">
+                <div class="boss-title">${boss.name}</div>
+                    ${priceRows}
+                </div>
+            </div>
+            <div class="total-gold">${bossTotalGold}g</div>
+    `;
+    bossesWrap.appendChild(bossWrap);
+    });
+
+
+        var socket = io();
+
+        var messages = document.getElementById('messages');
+        var form = document.getElementById('form');
+        var input = document.getElementById('input');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (input.value) {
+                socket.emit('chat message', input.value);
+                input.value = '';
+            }
+        });
+
+        socket.on('chat message', function (msg) {
+            var item = document.createElement('li');
+            item.textContent = msg;
+            messages.appendChild(item);
+            window.scrollTo(0, document.body.scrollHeight);
+        });
+
+    </script>
+</body>
+
+</html>
