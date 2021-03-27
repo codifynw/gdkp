@@ -116,3 +116,32 @@ body {
 #messages>li:nth-child(odd) {
     background: #efefef;
 }
+
+
+
+
+
+.container {
+    position: absolute;
+    width: 300px;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+.test-controls {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+.btn {
+    width: 150px;
+    padding: 15px 10px;
+    background-color: darkslategray;
+    color: white;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+}
