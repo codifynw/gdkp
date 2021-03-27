@@ -1,5 +1,17 @@
+require('dotenv').config()
+
 const express = require("express");
 const socket = require("socket.io");
+const mongoose = require('mongoose');
+
+// DB setup
+mongoose.connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+const db = mongoose.connection
+db.on('error', (error) => console.error(error))
+db.once('open', () => console.log('Connected to Database'))
 
 // App setup
 const PORT = 3000;
