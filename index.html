@@ -3,71 +3,215 @@
 
 <head>
     <title>Socket.IO chat</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rakkas&display=swap" rel="stylesheet">
+
     <style>
-        body {
-            margin: 0;
-            padding-bottom: 3rem;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&display=swap');
+html {
+    background-color: rgba(0, 0, 0, 0.85);
+    font-family: 'Rakkas', cursive;
+    color: white;
+}
 
-        #form {
-            background: rgba(0, 0, 0, 0.15);
-            padding: 0.25rem;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            display: flex;
-            height: 3rem;
-            box-sizing: border-box;
-            backdrop-filter: blur(10px);
-        }
+#bosses {
+    display: flex;
+}
+.boss-wrap {
+    width: 300px;
+    height: 500px;
+    margin: 30px;
+    position: relative;
+}
 
-        #input {
-            border: none;
-            padding: 0 1rem;
-            flex-grow: 1;
-            border-radius: 2rem;
-            margin: 0.25rem;
-        }
+.boss-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: .2;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.loot-wrapper {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    min-height: 160px;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+.boss-title {
+    margin-top: -20px;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 15px;
+}
 
-        #input:focus {
-            outline: none;
-        }
+.item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+}
+.total-gold {
+    position: absolute;
+    font-size: 50px;
+    color: gold;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%,0);
+}
 
-        #form>button {
-            background: #333;
-            border: none;
-            padding: 0 1rem;
-            margin: 0.25rem;
-            border-radius: 3px;
-            outline: none;
-            color: #fff;
-        }
 
-        #messages {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
 
-        #messages>li {
-            padding: 0.5rem 1rem;
-        }
 
-        #messages>li:nth-child(odd) {
-            background: #efefef;
-        }
+
+
+
+
+
+
+body {
+    margin: 0;
+    padding-bottom: 3rem;
+}
+
+#form {
+    background: rgba(0, 0, 0, 0.15);
+    padding: 0.25rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    height: 3rem;
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+}
+
+#input {
+    border: none;
+    padding: 0 1rem;
+    flex-grow: 1;
+    border-radius: 2rem;
+    margin: 0.25rem;
+}
+
+#input:focus {
+    outline: none;
+}
+
+#form>button {
+    background: #333;
+    border: none;
+    padding: 0 1rem;
+    margin: 0.25rem;
+    border-radius: 3px;
+    outline: none;
+    color: #fff;
+}
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#messages>li {
+    padding: 0.5rem 1rem;
+}
+
+#messages>li:nth-child(odd) {
+    background: #efefef;
+}
+
+
     </style>
+
+
 </head>
 
 <body>
-    <ul id="messages"></ul>
-    <form id="form" action="">
-        <input id="input" autocomplete="off" /><button>Send</button>
-    </form>
+
+    <div id="wrapper">
+        <div id="bosses"></div>
+    </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script>
+
+let bosses = [
+  {
+    name: 'Noth',
+    image: 'https://wow.zamimg.com/uploads/screenshots/normal/131315-noth-the-plaguebringer.jpg',
+    lootDrop: [{
+        'name': 'item1',
+        'price': 1400
+    },{
+        'name': 'item2',
+        'price': 200
+    }]
+  },
+  {
+    name: 'Heigan',
+    image: 'https://wow.zamimg.com/uploads/screenshots/normal/335872-heigan-the-unclean.jpg',
+    lootDrop: [{
+        'name': 'item1',
+        'price': 2200
+    },{
+        'name': 'item2',
+        'price': 200
+    },{
+        'name': 'item3',
+        'price': 6000
+    }]
+  },
+  {
+    name: 'Loatheb',
+    image: 'https://wow.zamimg.com/uploads/screenshots/normal/120824-loatheb.jpg',
+    lootDrop: [{
+        'name': 'item1',
+        'price': 2100
+    },{
+        'name': 'item2',
+        'price': 600
+    }]
+  },  
+]
+
+var bossesWrap = document.getElementById('bosses');
+let total = 0;
+let bossesTotal = 
+
+
+bosses.forEach(function(boss) {
+    let bossWrap = document.createElement('div');
+    bossWrap.className = 'boss-wrap';
+
+    bossTotalGold = boss.lootDrop.map(item => item.price).reduce((prev, next) => prev + next).toLocaleString();
+    console.log(bossTotalGold)
+
+    // TEMPLATE BUILD
+    let priceRows = boss.lootDrop.map(lootItem => `
+        <div class="item-row">
+            <div class="item-name">Item ${lootItem.name}</div>
+            <div class="item-price">${lootItem.price.toLocaleString()}g</div>        
+        </div>
+    `).join('');
+  
+  bossWrap.innerHTML = `
+        <div class="boss-image" style="background-image: url('${boss.image}'"></div>
+        <div class="loot-wrapper">
+            <div class="boss-title">${boss.name}</div>
+                ${priceRows}
+            </div>
+        </div>
+        <div class="total-gold">${bossTotalGold}g</div>
+   `;
+  bossesWrap.appendChild(bossWrap);
+});
+
+
 
         var socket = io();
 
