@@ -1,22 +1,19 @@
 import React, { Component } from "react";
 
-class Boss extends Component {
-  constructor() {
-    super();
-    // this.setState = {
-    //   // boss: Response.data.name
-    //   bosses: {
-    //     name: "patch",
-    //   },
-    // };
-  }
-  render() {
-    return (
-      <div>
-        <p>boss: {this.props.name}</p>
-      </div>
-    );
-  }
-}
+// JSX
+// const Boss = ({ boss }) => {
+//   return (
+//     React.createElement("div"), {}, [React.createElement("h1", {}, boss.name)]
+//   );
+// };
+
+// With my friend Babel
+const Boss = (props) => {
+  return (
+    <div>
+      <h2>{props.name}</h2>
+    </div>
+  );
+};
 
 export default Boss;
