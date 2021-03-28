@@ -1,9 +1,12 @@
 const express = require("express");
 const socket = require("socket.io");
-const PORT = 3000;
+const PORT = 5000;
 const connectDB = require('./config/db');
 const dotenv = require('dotenv');
 var path = require('path');
+const handlebars = require('express-handlebars');
+var Boss = require('./models/boss')
+
 
 // LOAD CONFIG
 dotenv.config( { path: './config/config.env'} )
@@ -18,10 +21,27 @@ const server = app.listen(PORT, function () {
   console.log(`http://localhost:${PORT}`);
 });
 
+//Sets our app to use the handlebars engine
+app.set('view engine', 'handlebars');
+
+//Sets handlebars configurations
+app.engine('handlebars', handlebars({
+  layoutsDir: __dirname + '/views/',
+}));
+
 // Files
 app.use(express.static("public"));
 app.get('/raid', function(req, res) {
-  res.sendFile(path.join(__dirname + '/public/raid.html'));
+  Boss.findOne().exec(function (error, boss) {
+    console.log(boss)
+      res.render('raid', { 
+        layout : 'raid',
+        boss: boss,
+      });
+  });  
+
+  // NON TEMPLATE SOLUTION
+  // res.sendFile(path.join(__dirname + '/public/raid.html'));
 });
 
 // Socket setup
