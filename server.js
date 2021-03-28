@@ -56,6 +56,8 @@ app.use(express.json())
 
 const subscribersRouter = require('./routes/subscribers')
 app.use('/subscribers', subscribersRouter)
+const locationsRouter = require('./routes/locations')
+app.use('/locations', locationsRouter)
 
 
 

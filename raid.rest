@@ -1,0 +1,25 @@
+### GET ALL
+GET http://localhost:3000/location
+
+### GET ONE
+GET http://localhost:3000/location/id
+
+### DELETE ONE
+DELETE http://localhost:3000/location/id
+
+### UPDATE ONE
+PATCH http://localhost:3000/location/id
+Content-Type: application/json
+
+{
+    "name": "Odin Wilson"
+}
+
+### CREATE ONE
+POST http://localhost:3000/location
+Content-Type: application/json
+
+{
+    "name": "Cody Wilson",
+    "subscribedToChannel": "Testing"
+}
