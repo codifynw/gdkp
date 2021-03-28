@@ -9,6 +9,9 @@ const bossSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    image: {
+        type: String,
+    },
     encounterId: {
         type: mongoose.SchemaTypes.ObjectId,
         required: true,

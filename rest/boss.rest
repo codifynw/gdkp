@@ -1,0 +1,25 @@
+### GET ALL
+GET http://localhost:3000/bosses
+
+### GET ONE
+GET http://localhost:3000/bosses
+
+### DELETE ONE
+DELETE http://localhost:3000/bosses
+
+### UPDATE ONE
+PATCH http://localhost:3000/bosses
+Content-Type: application/json
+
+### CREATE ONE
+POST http://localhost:3000/bosses
+Content-Type: application/json
+
+{
+    "name": "Anub'Rekhan",
+    "wowId": 15956,
+    "image": "https://wow.zamimg.com/uploads/screenshots/normal/1214-anubrekhan.jpg",
+    "encounterId": "605fff18c41b5b045e15fdc3"
+}
+
+# NAXX: 605fff18c41b5b045e15fdc3

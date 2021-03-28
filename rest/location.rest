@@ -12,7 +12,7 @@ PATCH http://localhost:3000/locations/605fd4ca678c1ff74d63cf31
 Content-Type: application/json
 
 {
-    "name": "Odin Wilson"
+    "name": ""
 }
 
 ### CREATE ONE
@@ -20,5 +20,5 @@ POST http://localhost:3000/locations
 Content-Type: application/json
 
 {
-    "name": "Naxxramas"
+    "name": "ONY"
 }
