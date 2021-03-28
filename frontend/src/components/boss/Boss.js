@@ -3,14 +3,17 @@ import React, { Component } from "react";
 class Boss extends Component {
   constructor() {
     super();
-    this.state = {
-      boss: "who knows",
-    };
+    // this.setState = {
+    //   // boss: Response.data.name
+    //   bosses: {
+    //     name: "patch",
+    //   },
+    // };
   }
   render() {
     return (
       <div>
-        <h1>NAXX GDKKP</h1>
+        <p>boss: {this.props.name}</p>
       </div>
     );
   }

@@ -1,24 +1,31 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Boss from "../boss/Boss";
 
 class Raid extends Component {
   constructor() {
     super();
     this.state = {
-      boss: "who knows",
+      bosses: {},
     };
   }
 
   componentDidMount = () => {
     axios.get("/bosses").then((response) => {
-      console.log("response: ", response);
+      this.setState({
+        bosses: response.data,
+      });
     });
   };
 
   render() {
+    console.log("***");
+    console.log(this.state.bosses[0]);
+    let firstBoss = this.state.bosses[0];
     return (
       <div>
-        <h1>NAXX GDDKKP</h1>
+        <h1>NAXX GDKP</h1>
+        <Boss {...firstBoss} />
       </div>
     );
   }
