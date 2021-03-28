@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-// JSX
+// OLD WAY
 // const Boss = ({ boss }) => {
 //   return (
 //     React.createElement("div"), {}, [React.createElement("h1", {}, boss.name)]
 //   );
 // };
 
-// With my friend Babel
+// With my friend JSX!
 const Boss = (props) => {
   return (
     <div>
