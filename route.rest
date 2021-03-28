@@ -1,9 +1,21 @@
+### GET ALL
 GET http://localhost:3000/subscribers
 
-###
-GET http://localhost:3000/subscribers/12
+### GET ONE
+GET http://localhost:3000/subscribers/605fd091cca85ff6aa64a4f3
 
-###
+### DELETE ONE
+DELETE http://localhost:3000/subscribers/605fcbadcd1d3cf4803308a8
+
+### UPDATE ONE
+PATCH http://localhost:3000/subscribers/605fd091cca85ff6aa64a4f3
+Content-Type: application/json
+
+{
+    "name": "Jaclyn Wilson"
+}
+
+### CREATE ONE
 POST http://localhost:3000/subscribers
 Content-Type: application/json
 
