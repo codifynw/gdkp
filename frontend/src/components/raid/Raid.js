@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Boss from "../boss/Boss";
 
 const Raid = () => {
-  const [bosses, setBosses] = useState(["oneBoss", "twoBoss"]);
+  const [bosses, setBosses] = useState([]);
 
   useEffect(() => {
     requestBosses();
@@ -14,12 +14,23 @@ const Raid = () => {
     setBosses(json);
   }
 
-  console.log("bosses: ", bosses);
-
   return (
     <div>
       <h1>NAXX GDKP</h1>
-      <Boss name="Loatheb" />
+      <div id="bosses">
+        {!bosses.length ? (
+          <h2>Loading</h2>
+        ) : (
+          bosses.map((boss) => (
+            <Boss
+              name={boss.name}
+              key={boss.name}
+              image={boss.image}
+              loot={boss.name}
+            />
+          ))
+        )}
+      </div>
     </div>
   );
 };

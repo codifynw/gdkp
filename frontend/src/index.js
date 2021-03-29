@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import Raid from "./components/raid/Raid";
-import reportWebVitals from "./reportWebVitals";
+import "./css/main.css";
 
 const App = () => {
   return (
-    <div>
+    <div id="main">
       <Raid />
     </div>
   );

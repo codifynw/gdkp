@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Rakkas&display=swap");
 
-#main {
+html {
   background-color: rgba(0, 0, 0, 0.85);
-  font-family: "Rakkas", cursive;
   color: white;
+}
+
+#main {
+  font-family: "Rakkas", cursive;
 }
 
 #bosses {
