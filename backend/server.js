@@ -34,11 +34,11 @@ app.use(express.static("public"));
 app.get('/raid', function(req, res) {
   Boss.findOne().exec(function (error, boss) {
     console.log(boss)
-      res.render('raid', { 
+      res.render('raid', {
         layout : 'raid',
         boss: boss,
       });
-  });  
+  });
 
   // NON TEMPLATE SOLUTION
   // res.sendFile(path.join(__dirname + '/public/raid.html'));
@@ -79,5 +79,5 @@ const locationsRouter = require('./routes/locations')
 app.use('/locations', locationsRouter)
 const bossesRouter = require('./routes/bosses')
 app.use('/bosses', bossesRouter)
-
-
+const raidsRouter = require('./routes/raids')
+app.use('/raids', raidsRouter)
