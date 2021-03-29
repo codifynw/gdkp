@@ -4,10 +4,12 @@ const loot = [
   {
     name: "Item One",
     purchasePrice: 1200,
+    wowId: 1212,
   },
   {
     name: "Item Two",
     purchasePrice: 150,
+    wowId: 1131,
   },
 ];
 
@@ -33,9 +35,9 @@ const Boss = ({ name, image }) => {
           <h2>Loading</h2>
         ) : (
           loot.map((lootItem) => (
-            <div class="item-row">
-              <div class="item-name">{lootItem.name}</div>
-              <div class="item-price">
+            <div key={lootItem.wowId} className="item-row">
+              <div className="item-name">{lootItem.name}</div>
+              <div className="item-price">
                 {lootItem.purchasePrice.toLocaleString()}g
               </div>
             </div>
