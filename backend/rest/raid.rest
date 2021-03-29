@@ -1,14 +1,14 @@
 ### GET ALL
-GET http://localhost:3000/location
+GET http://localhost:5000/location
 
 ### GET ONE
-GET http://localhost:3000/location/id
+GET http://localhost:5000/location/id
 
 ### DELETE ONE
-DELETE http://localhost:3000/location/id
+DELETE http://localhost:5000/location/id
 
 ### UPDATE ONE
-PATCH http://localhost:3000/location/id
+PATCH http://localhost:5000/location/id
 Content-Type: application/json
 
 {
@@ -16,7 +16,7 @@ Content-Type: application/json
 }
 
 ### CREATE ONE
-POST http://localhost:3000/location
+POST http://localhost:5000/location
 Content-Type: application/json
 
 {

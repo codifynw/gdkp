@@ -1,18 +1,17 @@
 const express = require("express");
 const socket = require("socket.io");
 const PORT = 5000;
-const connectDB = require('./config/db');
-const dotenv = require('dotenv');
-var path = require('path');
-const handlebars = require('express-handlebars');
-var Boss = require('./models/boss')
-
+const connectDB = require("./config/db");
+const dotenv = require("dotenv");
+var path = require("path");
+const handlebars = require("express-handlebars");
+var Boss = require("./models/boss");
 
 // LOAD CONFIG
-dotenv.config( { path: './config/config.env'} )
+dotenv.config({ path: "./config/config.env" });
 
 // LOAD DB
-connectDB()
+connectDB();
 
 // App setup
 const app = express();
@@ -22,22 +21,25 @@ const server = app.listen(PORT, function () {
 });
 
 //Sets our app to use the handlebars engine
-app.set('view engine', 'handlebars');
+app.set("view engine", "handlebars");
 
 //Sets handlebars configurations
-app.engine('handlebars', handlebars({
-  layoutsDir: __dirname + '/views/',
-}));
+app.engine(
+  "handlebars",
+  handlebars({
+    layoutsDir: __dirname + "/views/",
+  })
+);
 
 // Files
 app.use(express.static("public"));
-app.get('/raid', function(req, res) {
+app.get("/raid", function (req, res) {
   Boss.findOne().exec(function (error, boss) {
-    console.log(boss)
-      res.render('raid', {
-        layout : 'raid',
-        boss: boss,
-      });
+    console.log(boss);
+    res.render("raid", {
+      layout: "raid",
+      boss: boss,
+    });
   });
 
   // NON TEMPLATE SOLUTION
@@ -58,26 +60,28 @@ io.on("connection", function (socket) {
   });
 
   socket.on("disconnect", () => {
-    console.log('user disconnected');
+    console.log("user disconnected");
     activeUsers.delete(socket.userId);
     io.emit("user disconnected", socket.userId);
   });
 
   socket.on("chat message", function (data) {
-    console.log('chat message received');
+    console.log("chat message received");
     console.log(data);
     io.emit("chat message", data);
   });
 });
 
 // API
-app.use(express.json())
+app.use(express.json());
 
-const subscribersRouter = require('./routes/subscribers')
-app.use('/subscribers', subscribersRouter)
-const locationsRouter = require('./routes/locations')
-app.use('/locations', locationsRouter)
-const bossesRouter = require('./routes/bosses')
-app.use('/bosses', bossesRouter)
-const raidsRouter = require('./routes/raids')
-app.use('/raids', raidsRouter)
+const subscribersRouter = require("./routes/subscribers");
+app.use("/subscribers", subscribersRouter);
+const locationsRouter = require("./routes/locations");
+app.use("/locations", locationsRouter);
+const bossesRouter = require("./routes/bosses");
+app.use("/bosses", bossesRouter);
+const raidsRouter = require("./routes/raids");
+app.use("/raids", raidsRouter);
+const leusersRouter = require("./routes/leusers");
+app.use("/leusers", leusersRouter);

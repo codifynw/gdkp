@@ -2,13 +2,13 @@
 GET http://localhost:5000/bosses
 
 ### GET ONE
-GET http://localhost:3000/bosses
+GET http://localhost:5000/bosses
 
 ### DELETE ONE
-DELETE http://localhost:3000/bosses
+DELETE http://localhost:5000/bosses
 
 ### UPDATE ONE
-PATCH http://localhost:3000/bosses
+PATCH http://localhost:5000/bosses
 Content-Type: application/json
 
 ### CREATE ONE
@@ -16,9 +16,9 @@ POST http://localhost:5000/bosses
 Content-Type: application/json
 
 {
-    "name": "Maexxna",
-    "wowId": 15952,
-    "image": "https://static.wikia.nocookie.net/wowwiki/images/6/6b/Maexxna.jpg",
+    "name": "Loatheb",
+    "wowId": 16011,
+    "image": "https://wow.zamimg.com/uploads/screenshots/normal/120824-loatheb.jpg",
     "encounterId": "605fff18c41b5b045e15fdc3"
 }
 

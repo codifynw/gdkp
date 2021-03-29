@@ -1,0 +1,23 @@
+### GET ALL
+GET http://localhost:5000/leusers
+
+### GET ONE
+GET http://localhost:5000/leusers
+
+### DELETE ONE
+DELETE http://localhost:5000/leusers
+
+### UPDATE ONE
+PATCH http://localhost:5000/leusers
+Content-Type: application/json
+
+### CREATE ONE
+POST http://localhost:5000/leusers
+Content-Type: application/json
+
+{
+    "username": "Shylar",
+    "password": "mad"
+}
+
+# NAXX: 605fff18c41b5b045e15fdc3

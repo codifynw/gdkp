@@ -30,7 +30,6 @@ const Boss = ({ name, image }) => {
       ></div>
       <div className="loot-wrapper">
         <div className="boss-title">{name}</div>
-
         {!loot.length ? (
           <h2>Loading</h2>
         ) : (
