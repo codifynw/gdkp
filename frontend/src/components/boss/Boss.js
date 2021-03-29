@@ -1,5 +1,16 @@
 import React from "react";
 
+const loot = [
+  {
+    name: "Item One",
+    purchasePrice: 1200,
+  },
+  {
+    name: "Item Two",
+    purchasePrice: 150,
+  },
+];
+
 // OLD WAY
 // const Boss = ({ boss }) => {
 //   return (
@@ -7,7 +18,7 @@ import React from "react";
 //   );
 // };
 
-// With my friend JSX!
+// With JSX!
 const Boss = ({ name, image }) => {
   return (
     <div className="boss-wrap">
@@ -17,8 +28,21 @@ const Boss = ({ name, image }) => {
       ></div>
       <div className="loot-wrapper">
         <div className="boss-title">{name}</div>
+
+        {!loot.length ? (
+          <h2>Loading</h2>
+        ) : (
+          loot.map((lootItem) => (
+            <div class="item-row">
+              <div class="item-name">{lootItem.name}</div>
+              <div class="item-price">
+                {lootItem.purchasePrice.toLocaleString()}g
+              </div>
+            </div>
+          ))
+        )}
       </div>
-      <div className="total-gold"></div>
+      <div className="total-gold">12,000g</div>
     </div>
   );
 };
