@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 // OLD WAY
 // const Boss = ({ boss }) => {
@@ -8,10 +8,10 @@ import React, { Component } from "react";
 // };
 
 // With my friend JSX!
-const Boss = (props) => {
+const Boss = ({ name }) => {
   return (
     <div>
-      <h2>{props.name}</h2>
+      <h2>{name}</h2>
     </div>
   );
 };

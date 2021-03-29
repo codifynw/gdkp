@@ -1,34 +1,27 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
 import Boss from "../boss/Boss";
 
-class Raid extends Component {
-  constructor() {
-    super();
-    this.state = {
-      bosses: {},
-    };
+const Raid = () => {
+  const [bosses, setBosses] = useState(["oneBoss", "twoBoss"]);
+
+  useEffect(() => {
+    requestBosses();
+  }, []);
+
+  async function requestBosses() {
+    const res = await fetch("/bosses");
+    const json = await res.json();
+    setBosses(json);
   }
 
-  componentDidMount = () => {
-    axios.get("/bosses").then((response) => {
-      this.setState({
-        bosses: response.data,
-      });
-    });
-  };
+  console.log("bosses: ", bosses);
 
-  render() {
-    console.log("***");
-    console.log(this.state.bosses[0]);
-    let firstBoss = this.state.bosses[0];
-    return (
-      <div>
-        <h1>NAXX GDKP</h1>
-        <Boss {...firstBoss} />
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <h1>NAXX GDKP</h1>
+      <Boss name="Loatheb" />
+    </div>
+  );
+};
 
 export default Raid;
