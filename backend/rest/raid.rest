@@ -1,25 +1,28 @@
 ### GET ALL
-GET http://localhost:5000/location
+GET http://localhost:5000/raids
 
 ### GET ONE
-GET http://localhost:5000/location/id
+GET http://localhost:5000/raids/6062b56dff6f03856f196fe8
 
 ### DELETE ONE
-DELETE http://localhost:5000/location/id
+DELETE http://localhost:5000/raids/id
 
 ### UPDATE ONE
-PATCH http://localhost:5000/location/id
+PATCH http://localhost:5000/raids/id
 Content-Type: application/json
 
 {
-    "name": "Odin Wilson"
+    "title": "Be Nice GDKP",
+    "time": "2021-03-31T20:00:00.005Z",
 }
 
 ### CREATE ONE
-POST http://localhost:5000/location
+POST http://localhost:5000/raids
 Content-Type: application/json
 
 {
-    "name": "Cody Wilson",
-    "subscribedToChannel": "Testing"
+    "title": "Be Nice GDKP",
+    "time": "2021-03-31T20:00:00.005Z",
+    "encounterId": "605fff18c41b5b045e15fdc3",
+    "leaderId": "606252a8ec181277d428f2b6"
 }

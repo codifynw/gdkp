@@ -85,3 +85,7 @@ const raidsRouter = require("./routes/raids");
 app.use("/raids", raidsRouter);
 const leusersRouter = require("./routes/leusers");
 app.use("/leusers", leusersRouter);
+const lootRouter = require("./routes/loot");
+app.use("/loot", lootRouter);
+const itemsRouter = require("./routes/items");
+app.use("/items", itemsRouter);

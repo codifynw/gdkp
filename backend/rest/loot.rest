@@ -1,0 +1,29 @@
+### GET ALL
+GET http://localhost:5000/loot
+
+### GET ONE
+GET http://localhost:5000/loot/
+
+### DELETE ONE
+DELETE http://localhost:5000/loot/id
+
+### UPDATE ONE
+PATCH http://localhost:5000/loot/id
+Content-Type: application/json
+
+{
+    "title": "Be Nice GDKP",
+    "time": "2021-03-31T20:00:00.005Z",
+}
+
+### CREATE ONE
+POST http://localhost:5000/loot
+Content-Type: application/json
+
+{
+    "buyer": "Slitterbox",
+    "price": 500,
+    "raidId": "6062b56dff6f03856f196fe8",
+    "bossId": "605fff18c41b5b045e15fdc3",
+    "itemId": "6062baf3ce87ec034b0bd7b3"
+}

@@ -11,6 +11,7 @@ html {
 
 #bosses {
   display: flex;
+  flex-wrap: wrap;
 }
 .boss-wrap {
   width: 300px;
