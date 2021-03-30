@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Raid = require("../models/raid");
 const Boss = require("../models/boss");
+const Loot = require("../models/loot");
 
 // GET ALL
 router.get("/", async (req, res) => {
@@ -63,6 +64,11 @@ router.get("/:id/bosses", getRaid, getBosses, (req, res) => {
   res.json(res.bosses);
 });
 
+// GET BOSSES IN RAID
+router.get("/:id/loot", getLoot, (req, res) => {
+  res.json(res.loot);
+});
+
 async function getRaid(req, res, next) {
   let raid;
   console.log(req.params.id);
@@ -98,6 +104,27 @@ async function getBosses(req, res, next) {
 
   console.log(bosses);
   res.bosses = bosses;
+  next();
+}
+
+async function getLoot(req, res, next) {
+  let loot;
+  let raidId = req.params.id;
+  try {
+    loot = await Loot.find({
+      raidId: raidId,
+    });
+
+    if (loot === null) {
+      return res.status(404).json({ message: "Cannot find loot" });
+    }
+  } catch (error) {
+    console.log("ERROR ERROR");
+    return res.status(500).json({ message: error.message });
+  }
+
+  console.log(loot);
+  res.loot = loot;
   next();
 }
 

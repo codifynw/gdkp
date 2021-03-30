@@ -31,3 +31,5 @@ Content-Type: application/json
 ### GET BOSSES IN ONE
 GET http://localhost:5000/raids/6062b56dff6f03856f196fe8/bosses
 
+### GET LOOT IN ONE
+GET http://localhost:5000/raids/6062b56dff6f03856f196fe8/loot
