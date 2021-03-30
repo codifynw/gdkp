@@ -26,3 +26,8 @@ Content-Type: application/json
     "encounterId": "605fff18c41b5b045e15fdc3",
     "leaderId": "606252a8ec181277d428f2b6"
 }
+
+
+### GET BOSSES IN ONE
+GET http://localhost:5000/raids/6062b56dff6f03856f196fe8/bosses
+

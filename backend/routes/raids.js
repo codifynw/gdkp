@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Raid = require("../models/raid");
+const Boss = require("../models/boss");
 
 // GET ALL
 router.get("/", async (req, res) => {
@@ -12,7 +13,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// GET
+// GET 1
 router.get("/:id", getRaid, (req, res) => {
   res.json(res.raid);
 });
@@ -57,9 +58,14 @@ router.delete("/:id", getRaid, async (req, res) => {
   }
 });
 
+// GET BOSSES IN RAID
+router.get("/:id/bosses", getRaid, getBosses, (req, res) => {
+  res.json(res.bosses);
+});
+
 async function getRaid(req, res, next) {
   let raid;
-
+  console.log(req.params.id);
   try {
     raid = await Raid.findById(req.params.id);
     if (raid === null) {
@@ -71,6 +77,27 @@ async function getRaid(req, res, next) {
   }
 
   res.raid = raid;
+  next();
+}
+
+async function getBosses(req, res, next) {
+  let bosses;
+  let encounterId = res.raid.encounterId;
+  try {
+    bosses = await Boss.find({
+      encounterId: encounterId,
+    });
+
+    if (bosses === null) {
+      return res.status(404).json({ message: "Cannot find bosses" });
+    }
+  } catch (error) {
+    console.log("ERROR ERROR");
+    return res.status(500).json({ message: error.message });
+  }
+
+  console.log(bosses);
+  res.bosses = bosses;
   next();
 }
 
