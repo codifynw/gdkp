@@ -24,7 +24,8 @@ router.post("/", async (req, res) => {
     price: req.body.price,
     raidId: req.body.raidId,
     bossId: req.body.bossId,
-    itemId: req.body.itemId,
+    wowId: req.body.wowId,
+    customName: req.body.customName,
   });
 
   try {

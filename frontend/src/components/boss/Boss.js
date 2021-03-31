@@ -45,6 +45,7 @@ const Boss = ({ name, image, raidId, bossId }) => {
               buyer={lootItem.buyer}
               price={lootItem.price}
               itemKey={lootItem._id}
+              wowId={lootItem.wowId}
             />
           ))
         )}

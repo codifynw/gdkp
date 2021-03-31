@@ -5,7 +5,7 @@ GET http://localhost:5000/loot
 GET http://localhost:5000/loot/
 
 ### DELETE ONE
-DELETE http://localhost:5000/loot/id
+DELETE http://localhost:5000/loot/60642e276c08c48338999d38
 
 ### UPDATE ONE
 PATCH http://localhost:5000/loot/6062bc66aa8b4e04137c740b
@@ -20,9 +20,9 @@ POST http://localhost:5000/loot
 Content-Type: application/json
 
 {
-    "buyer": "Jaclyn",
-    "price": 6969,
+    "buyer": "Wasted Time",
+    "price": 2000,
+    "wowId": 23000,
     "raidId": "6062b56dff6f03856f196fe8",
-    "bossId": "60625818ecf5d57852bb6efd",
-    "itemId": "6062baf3ce87ec034b0bd7b3"
+    "bossId": "60625818ecf5d57852bb6efd"
 }
