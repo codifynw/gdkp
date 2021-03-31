@@ -21,7 +21,12 @@ const Raid = () => {
 
   return (
     <div>
-      <h1 className="align-c">{beNiceString} NAXX GDKP</h1>
+      <div className="jumbo-wrap">
+        <div className="align-c">
+          <div className="strong guild-name">{beNiceString}</div>
+          <div className="sub-guild">NAXX GDKP</div>
+        </div>
+      </div>
       <div id="bosses">
         {!bosses.length ? (
           <h2>Loading</h2>
@@ -29,7 +34,6 @@ const Raid = () => {
           bosses.map((boss) => (
             <Boss
               name={boss.name}
-              key={boss.name}
               image={boss.image}
               raidId={raidId}
               bossId={boss._id}

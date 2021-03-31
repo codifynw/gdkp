@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import Item from "../item/Item";
 
-const Boss = ({ name, key, image, raidId, bossId }) => {
+const Boss = ({ name, image, raidId, bossId }) => {
+  let overlayText = "";
+  let hasLoot = false;
   const [loot, setLoot] = useState([]);
-
-  console.log("bossId: ", bossId);
 
   useEffect(() => {
     requestLoot();
@@ -15,34 +16,44 @@ const Boss = ({ name, key, image, raidId, bossId }) => {
     setLoot(json);
   }
 
-  console.log("loot: ", loot);
+  if (loot.length) {
+    hasLoot = true;
+    overlayText =
+      loot
+        .map((item) => item.price)
+        .reduce((prev, next) => prev + next)
+        .toLocaleString() + "g";
+  }
+
+  console.log("LOOT: ", loot);
+  console.log("bossId: ", bossId);
 
   // With JSX!
   return (
-    <div className="boss-wrap">
+    <div key={bossId} className="boss-wrap">
       <div
-        className="boss-image"
+        className={`boss-image ${hasLoot ? "" : "alive"}`}
         style={{ backgroundImage: `url(${image})` }}
       ></div>
       <div className="loot-wrapper">
         <h2 className="boss-title">{name}</h2>
-        {!loot.length ? (
-          <div>No Loot</div>
+        {!hasLoot ? (
+          <div></div>
         ) : (
           loot.map((lootItem) => (
-            <div key={lootItem.wowId} className="item-row">
-              <a href={"http://www.classic.wowhead.com/item=" + lootItem.wowId}>
-                {/* <div className="item-name">{lootItem.name}</div> */}
-                <div className="item-name">Placeholder</div>
-              </a>
-              <div className="item-price">
-                {lootItem.price?.toLocaleString()}g
-              </div>
-            </div>
+            <Item
+              buyer={lootItem.buyer}
+              price={lootItem.price}
+              itemKey={lootItem._id}
+            />
           ))
         )}
       </div>
-      <div className="total-gold">12,000g</div>
+      {hasLoot ? (
+        <div className="overlay-text total-gold">{overlayText}</div>
+      ) : (
+        <div className="overlay-text tbd-overlay">{overlayText}</div>
+      )}
     </div>
   );
 };

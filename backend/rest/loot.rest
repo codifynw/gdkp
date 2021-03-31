@@ -20,9 +20,9 @@ POST http://localhost:5000/loot
 Content-Type: application/json
 
 {
-    "buyer": "Slitterbox",
-    "price": 500,
+    "buyer": "Jaclyn",
+    "price": 6969,
     "raidId": "6062b56dff6f03856f196fe8",
-    "bossId": "605fff18c41b5b045e15fdc3",
+    "bossId": "60625818ecf5d57852bb6efd",
     "itemId": "6062baf3ce87ec034b0bd7b3"
 }

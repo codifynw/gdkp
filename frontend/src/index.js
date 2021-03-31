@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import Raid from "./components/raid/Raid";
+import "normalize.css";
 import "./css/main.css";
 
 const App = () => {
