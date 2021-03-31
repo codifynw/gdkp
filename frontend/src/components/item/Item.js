@@ -1,6 +1,6 @@
 import React from "react";
 
-const Item = ({ buyer, price, itemKey, wowId }) => {
+const Item = ({ buyer, price, itemKey, wowId, customName }) => {
   // WILL HAVE TO WAIT DUE TO CORS ISSUES
   //   async function getNameFromId() {
   //     const res = await fetch(`https://classic.wowhead.com/item=${wowId}&xml`, {
@@ -17,8 +17,8 @@ const Item = ({ buyer, price, itemKey, wowId }) => {
 
   return (
     <div key={itemKey} className="item-row">
-      <a href={"http://www.classic.wowhead.com/item=" + "23000"}>
-        <div className="item-name"></div>
+      <a href={"http://www.classic.wowhead.com/item=" + wowId}>
+        <div className="item-name">{customName}</div>
         <div className="item-buyer">{buyer}</div>
       </a>
       <div className="item-price">{price?.toLocaleString()}g</div>

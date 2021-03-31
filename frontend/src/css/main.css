@@ -1,8 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Rakkas&display=swap");
 
 html {
-  background-color: #0c0c0e;
+  /* background-color: #0c0c0e; */
+  background-color: #222323;
   color: white;
+}
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 #main {
@@ -14,40 +24,68 @@ html {
   flex-wrap: wrap;
 }
 .boss-wrap {
-  width: 300px;
-  height: 500px;
+  width: calc(100% / 5 - 60px);
+  height: 400px;
   margin: 30px;
+  margin-bottom: 80px;
   position: relative;
+  border-radius: 10px;
+  border: 3px solid rgba(255, 217, 0);
 }
 .boss-image {
   width: 100%;
   height: 100%;
-  position: absolute;
   opacity: 0.2;
-  background-position: center;
+  background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 10px 10px 10px 10px;
 }
 .boss-image.alive {
-  opacity: 0.3;
+  opacity: 0.6;
 }
 .loot-wrapper {
   position: absolute;
   bottom: 0px;
   width: 100%;
   min-height: 160px;
-  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 0px 0px 10px 10px;
+}
+.grad-filter-up {
+  z-index: 0;
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.9) 80%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  border-radius: 0px 0px 10px 10px;
 }
 .boss-title {
-  margin-top: -35px;
-  font-size: 2.5em;
+  font-size: 2em;
   text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -26px;
+  padding: 5px 15px;
+  white-space: nowrap;
+  background-color: black;
+  border: 3px solid rgba(255, 217, 0);
+  border-radius: 20px;
   margin-bottom: 15px;
   letter-spacing: 0.05em;
   text-shadow: 0 0 1em black;
 }
 
 .item-row {
+  position: relative;
+  z-index: 5;
   display: flex;
   font-size: 20px;
   align-items: center;
@@ -71,11 +109,15 @@ html {
 
 .overlay-text {
   position: absolute;
-  font-size: 50px;
-  top: 33%;
+  font-size: 2.5em;
   left: 50%;
   transform: translate(-50%, 0);
   color: white;
+  bottom: -37px;
+  background-color: black;
+  padding: 10px 15px;
+  border: 3px solid rgba(255, 217, 0);
+  border-radius: 20px;
 }
 .total-gold {
   color: gold;
@@ -160,8 +202,31 @@ body {
   cursor: pointer;
 }
 .align-c {
+  z-index: 1;
+  padding: 30px 0;
+  position: relative;
   text-align: center;
 }
+.raid-stats-wrap {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+.raid-stat {
+  text-align: center;
+}
+.raid-stat-key {
+  color: gold;
+}
+
+.raid-stat-value {
+  font-size: 20px;
+}
+
 /* 
 .raid-wrap {
   margin: 0px 10px;
@@ -169,10 +234,25 @@ body {
 } */
 
 .jumbo-wrap {
-  padding: 30px 0px;
+  position: relative;
   background-color: #222222;
   width: 100%;
   color: white;
+}
+
+.vignete {
+  z-index: 0;
+  pointer-events: none;
+  background: rgb(0, 0, 0);
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.3519782913165266) 0%,
+    rgba(0, 0, 0, 0.5760679271708684) 50%,
+    rgba(0, 0, 0, 0.8449754901960784) 100%
+  );
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 .strong {
@@ -184,8 +264,17 @@ body {
   letter-spacing: 0.15em;
 }
 
+.guild-name.bigger {
+  font-size: 36px;
+}
+
+.sub-guild.bigger {
+  font-size: 20px;
+}
+
 .sub-guild {
   letter-spacing: 0.4em;
+  color: gold;
 }
 
 .item-buyer {

@@ -35,8 +35,9 @@ const Boss = ({ name, image, raidId, bossId }) => {
         className={`boss-image ${hasLoot ? "" : "alive"}`}
         style={{ backgroundImage: `url(${image})` }}
       ></div>
+      <div className="boss-title">{name}</div>
+      <div class="grad-filter-up"></div>
       <div className="loot-wrapper">
-        <h2 className="boss-title">{name}</h2>
         {!hasLoot ? (
           <div></div>
         ) : (
@@ -45,6 +46,7 @@ const Boss = ({ name, image, raidId, bossId }) => {
               buyer={lootItem.buyer}
               price={lootItem.price}
               itemKey={lootItem._id}
+              customName={lootItem.customName}
               wowId={lootItem.wowId}
             />
           ))

@@ -22,9 +22,25 @@ const Raid = () => {
   return (
     <div>
       <div className="jumbo-wrap">
+        <div className="jumbo-inner relative"></div>
+        {/* <div className="vignete"></div> */}
         <div className="align-c">
-          <div className="strong guild-name">{beNiceString}</div>
-          <div className="sub-guild">NAXX GDKP</div>
+          <div className="strong guild-name bigger">{beNiceString}</div>
+          <div className="sub-guild bigger">NAXX GDKP</div>
+        </div>
+        <div className="raid-stats-wrap">
+          <div className="raid-stat">
+            <div className="raid-stat-key sub-guild">BOSSES</div>
+            <div className="raid-stat-value guild-name">1/15</div>
+          </div>
+          <div className="raid-stat">
+            <div className="raid-stat-key sub-guild">GOLD</div>
+            <div className="raid-stat-value guild-name">3,000g</div>
+          </div>
+          <div className="raid-stat">
+            <div className="raid-stat-key sub-guild">SPLIT</div>
+            <div className="raid-stat-value guild-name">75</div>
+          </div>
         </div>
       </div>
       <div id="bosses">
@@ -37,6 +53,7 @@ const Raid = () => {
               image={boss.image}
               raidId={raidId}
               bossId={boss._id}
+              customName={boss.customName}
             />
           ))
         )}
