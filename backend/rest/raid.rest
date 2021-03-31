@@ -28,15 +28,11 @@ Content-Type: application/json
 
 
 ### GET BOSSES IN ONE
-GET http://localhost:5000/raids/6062b56dff6f03856f196fe8
+GET http://localhost:5000/raids/6062b56dff6f03856f196fe8/bosses
 
 ### GET LOOT IN ONE
 GET http://localhost:5000/raids/6062b56dff6f03856f196fe8/loot
 
 ### GET LOOT FROM SPECIFIC BOSS IN RAID
-GET http://localhost:5000/raids/6062b56dff6f03856f196fe8/loot
+GET http://localhost:5000/raids/6062b56dff6f03856f196fe8/loot/606256cfecf5d2bb6
 Content-Type: application/json
-
-{
-    "bossId": "606256cfecf5d57852bb6efc"
-}

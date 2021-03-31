@@ -65,19 +65,19 @@ router.get("/:id/bosses", getRaid, getBosses, (req, res) => {
 });
 
 // GET LOOT BY BOSS
-router.get("/:id/bosses", getRaid, getBosses, (req, res) => {
-  res.json(res.bosses);
+router.get("/:id/loot/:bossId", getLoot, (req, res) => {
+  let bossId = req.params.bossId;
+  console.log("&&&&&&&");
+  console.log("bossId: ", bossId);
+  console.log("&&&&&&&");
+  res.loot = res.loot.filter(function (e) {
+    return e.bossId == bossId;
+  });
+  res.json(res.loot);
 });
 
-// GET BOSSES IN RAID
+// GET LOOT IN RAID
 router.get("/:id/loot", getLoot, (req, res) => {
-  console.log(req.body);
-  console.log("hit me");
-  if (req.body.bossId != null) {
-    res.loot = res.loot.filter(function (e) {
-      return e.bossId == req.body.bossId;
-    });
-  }
   res.json(res.loot);
 });
 

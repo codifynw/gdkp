@@ -10,13 +10,7 @@ const Boss = ({ name, key, image, raidId, bossId }) => {
   }, []);
 
   async function requestLoot() {
-    const res = await fetch(`/raids/${raidId}/loot`, {
-      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data), // body data type must match "Content-Type" header
-    });
+    const res = await fetch(`/raids/${raidId}/loot/${bossId}`);
     const json = await res.json();
     setLoot(json);
   }
@@ -33,7 +27,7 @@ const Boss = ({ name, key, image, raidId, bossId }) => {
       <div className="loot-wrapper">
         <h2 className="boss-title">{name}</h2>
         {!loot.length ? (
-          <h2>Loading</h2>
+          <div>No Loot</div>
         ) : (
           loot.map((lootItem) => (
             <div key={lootItem.wowId} className="item-row">
