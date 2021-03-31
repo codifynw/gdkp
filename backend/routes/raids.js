@@ -38,8 +38,8 @@ router.post("/", async (req, res) => {
 
 // UPDATE
 router.patch("/:id", getRaid, async (req, res) => {
-  if (req.body.name != null) {
-    res.raid.name = req.body.name;
+  if (req.body.slug != null) {
+    res.subscriber.slug = req.body.slug;
   }
   try {
     const updatedRaid = await res.raid.save();

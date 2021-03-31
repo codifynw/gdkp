@@ -5,15 +5,14 @@ GET http://localhost:5000/raids
 GET http://localhost:5000/raids/6062b56dff6f03856f196fe8
 
 ### DELETE ONE
-DELETE http://localhost:5000/raids/id
+DELETE http://localhost:5000/raids/6062b56dff6f03856f196fe8
 
 ### UPDATE ONE
-PATCH http://localhost:5000/raids/id
+PATCH http://localhost:5000/raids/id/6062b56dff6f03856f196fe8
 Content-Type: application/json
 
 {
-    "title": "Be Nice GDKP",
-    "time": "2021-03-31T20:00:00.005Z",
+    "slug": "1"
 }
 
 ### CREATE ONE
@@ -29,7 +28,7 @@ Content-Type: application/json
 
 
 ### GET BOSSES IN ONE
-GET http://localhost:5000/raids/6062b56dff6f03856f196fe8/bosses
+GET http://localhost:5000/raids/6062b56dff6f03856f196fe8
 
 ### GET LOOT IN ONE
 GET http://localhost:5000/raids/6062b56dff6f03856f196fe8/loot

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const nanoid = require("nanoid");
 
 const raidSchema = new mongoose.Schema({
   title: {
@@ -17,6 +18,12 @@ const raidSchema = new mongoose.Schema({
     type: mongoose.SchemaTypes.ObjectId,
     required: true,
     ref: "leuser",
+  },
+  slug: {
+    type: String,
+    unique: true,
+    required: true,
+    default: () => nanoid(),
   },
 });
 
