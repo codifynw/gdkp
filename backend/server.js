@@ -46,6 +46,10 @@ app.get("/raid", function (req, res) {
   // res.sendFile(path.join(__dirname + '/public/raid.html'));
 });
 
+app.get("/watch", function (req, res) {
+  console.log("hi");
+});
+
 // Socket setup
 const io = socket(server);
 const activeUsers = new Set();

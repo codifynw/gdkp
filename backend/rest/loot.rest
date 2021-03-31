@@ -8,12 +8,11 @@ GET http://localhost:5000/loot/
 DELETE http://localhost:5000/loot/id
 
 ### UPDATE ONE
-PATCH http://localhost:5000/loot/id
+PATCH http://localhost:5000/loot/6062bc66aa8b4e04137c740b
 Content-Type: application/json
 
 {
-    "title": "Be Nice GDKP",
-    "time": "2021-03-31T20:00:00.005Z",
+    "bossId": "606256cfecf5d57852bb6efc"
 }
 
 ### CREATE ONE

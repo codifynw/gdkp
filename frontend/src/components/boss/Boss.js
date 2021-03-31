@@ -1,27 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const loot = [
-  {
-    name: "Item One",
-    purchasePrice: 1200,
-    wowId: 23000,
-  },
-  {
-    name: "Item Two",
-    purchasePrice: 150,
-    wowId: 1131,
-  },
-];
+const Boss = ({ name, key, image, raidId, bossId }) => {
+  const [loot, setLoot] = useState([]);
 
-// OLD WAY
-// const Boss = ({ boss }) => {
-//   return (
-//     React.createElement("div"), {}, [React.createElement("h1", {}, boss.name)]
-//   );
-// };
+  console.log("bossId: ", bossId);
 
-// With JSX!
-const Boss = ({ name, image }) => {
+  useEffect(() => {
+    requestLoot();
+  }, []);
+
+  async function requestLoot() {
+    const res = await fetch(`/raids/${raidId}/loot/${bossId}`, {
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(bossId), // body data type must match "Content-Type" header
+    });
+    const json = await res.json();
+    setLoot(json);
+  }
+
+  console.log("loot: ", loot);
+
+  // With JSX!
   return (
     <div className="boss-wrap">
       <div
@@ -36,10 +38,11 @@ const Boss = ({ name, image }) => {
           loot.map((lootItem) => (
             <div key={lootItem.wowId} className="item-row">
               <a href={"http://www.classic.wowhead.com/item=" + lootItem.wowId}>
-                <div className="item-name">{lootItem.name}</div>
+                {/* <div className="item-name">{lootItem.name}</div> */}
+                <div className="item-name">Placeholder</div>
               </a>
               <div className="item-price">
-                {lootItem.purchasePrice.toLocaleString()}g
+                {lootItem.price?.toLocaleString()}g
               </div>
             </div>
           ))

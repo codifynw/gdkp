@@ -64,14 +64,25 @@ router.get("/:id/bosses", getRaid, getBosses, (req, res) => {
   res.json(res.bosses);
 });
 
+// GET LOOT BY BOSS
+router.get("/:id/bosses", getRaid, getBosses, (req, res) => {
+  res.json(res.bosses);
+});
+
 // GET BOSSES IN RAID
 router.get("/:id/loot", getLoot, (req, res) => {
+  console.log(req.body);
+  console.log("hit me");
+  if (req.body.bossId != null) {
+    res.loot = res.loot.filter(function (e) {
+      return e.bossId == req.body.bossId;
+    });
+  }
   res.json(res.loot);
 });
 
 async function getRaid(req, res, next) {
   let raid;
-  console.log(req.params.id);
   try {
     raid = await Raid.findById(req.params.id);
     if (raid === null) {
@@ -102,7 +113,6 @@ async function getBosses(req, res, next) {
     return res.status(500).json({ message: error.message });
   }
 
-  console.log(bosses);
   res.bosses = bosses;
   next();
 }
@@ -110,6 +120,7 @@ async function getBosses(req, res, next) {
 async function getLoot(req, res, next) {
   let loot;
   let raidId = req.params.id;
+
   try {
     loot = await Loot.find({
       raidId: raidId,
@@ -123,7 +134,6 @@ async function getLoot(req, res, next) {
     return res.status(500).json({ message: error.message });
   }
 
-  console.log(loot);
   res.loot = loot;
   next();
 }

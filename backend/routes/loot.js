@@ -40,6 +40,9 @@ router.patch("/:id", getLoot, async (req, res) => {
   if (req.body.name != null) {
     res.loot.name = req.body.name;
   }
+  if (req.body.bossId != null) {
+    res.loot.bossId = req.body.bossId;
+  }
   try {
     const updatedLoot = await res.loot.save();
     res.json(updatedLoot);
