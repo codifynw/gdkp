@@ -10,12 +10,12 @@ const Boss = ({ name, key, image, raidId, bossId }) => {
   }, []);
 
   async function requestLoot() {
-    const res = await fetch(`/raids/${raidId}/loot/${bossId}`, {
+    const res = await fetch(`/raids/${raidId}/loot`, {
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(bossId), // body data type must match "Content-Type" header
+      body: JSON.stringify(data), // body data type must match "Content-Type" header
     });
     const json = await res.json();
     setLoot(json);
