@@ -29,7 +29,7 @@ const Boss = ({ name, image }) => {
         style={{ backgroundImage: `url(${image})` }}
       ></div>
       <div className="loot-wrapper">
-        <div className="boss-title">{name}</div>
+        <h2 className="boss-title">{name}</h2>
         {!loot.length ? (
           <h2>Loading</h2>
         ) : (
