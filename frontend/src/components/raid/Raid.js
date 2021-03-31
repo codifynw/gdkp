@@ -35,11 +35,11 @@ const Raid = () => {
           </div>
           <div className="raid-stat">
             <div className="raid-stat-key sub-guild">GOLD</div>
-            <div className="raid-stat-value guild-name">3,000g</div>
+            <div className="raid-stat-value guild-name">2,300g</div>
           </div>
           <div className="raid-stat">
             <div className="raid-stat-key sub-guild">SPLIT</div>
-            <div className="raid-stat-value guild-name">75</div>
+            <div className="raid-stat-value guild-name">57.5g</div>
           </div>
         </div>
       </div>

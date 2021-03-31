@@ -31,8 +31,6 @@ app.engine(
   })
 );
 
-// Files
-app.use(express.static("public"));
 app.get("/raid", function (req, res) {
   Boss.findOne().exec(function (error, boss) {
     console.log(boss);
@@ -93,3 +91,7 @@ const lootRouter = require("./routes/loot");
 app.use("/loot", lootRouter);
 const itemsRouter = require("./routes/items");
 app.use("/items", itemsRouter);
+
+// Files
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, "../frontend/build")));
