@@ -2,7 +2,7 @@
     "name": "gdkp-app",
     "version": "0.0.0",
     "scripts": {
-      "postinstall": "npm install --prefix backend && npm install --prefix frontend"
+      "heroku-prebuild": "npm install --prefix frontend && npm run build --prefix frontend"
     },
     "dependencies": {
       "@testing-library/jest-dom": "^5.11.10",
