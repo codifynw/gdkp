@@ -1,12 +1,22 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Raid from "./components/raid/Raid";
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+
+const User = () => {
+  return <div>This is the user page</div>;
+};
+
+const Home = () => {
+  return <div>This is the home page</div>;
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" />
+      <BrowserRouter>
+        <header className="App-header">
+          {/* <img src={logo} className="App-logo" alt="logo" />
         <p>Test</p>
         <a
           className="App-link"
@@ -16,8 +26,24 @@ function App() {
         >
           Learn React
         </a> */}
-        <Raid />
-      </header>
+          <nav>
+            <div>
+              <Link to="/">Home</Link>
+            </div>
+            <div>
+              <Link to="/user/:id">User</Link>
+            </div>
+          </nav>
+          <Switch>
+            <Route path="/user/:id">
+              <User />
+            </Route>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+          </Switch>
+        </header>
+      </BrowserRouter>
     </div>
   );
 }
