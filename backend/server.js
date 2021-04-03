@@ -1,6 +1,6 @@
 const express = require("express");
 const socket = require("socket.io");
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const connectDB = require("./config/db");
 const dotenv = require("dotenv");
 var path = require("path");
