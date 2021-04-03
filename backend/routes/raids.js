@@ -67,9 +67,6 @@ router.get("/:id/bosses", getRaid, getBosses, (req, res) => {
 // GET LOOT BY BOSS
 router.get("/:id/loot/:bossId", getLoot, (req, res) => {
   let bossId = req.params.bossId;
-  console.log("&&&&&&&");
-  console.log("bossId: ", bossId);
-  console.log("&&&&&&&");
   res.loot = res.loot.filter(function (e) {
     return e.bossId == bossId;
   });
