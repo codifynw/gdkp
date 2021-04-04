@@ -2,8 +2,10 @@
 
 html {
   /* background-color: #0c0c0e; */
-  background-color: #222323;
+  /* background-color: #222323; */
   color: white;
+  height: 100%;
+  width: 100%;
 }
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
@@ -125,7 +127,6 @@ html {
 
 body {
   margin: 0;
-  padding-bottom: 3rem;
 }
 
 #form {
@@ -280,4 +281,8 @@ body {
 .item-buyer {
   color: gray;
   font-size: 16px;
+}
+
+nav {
+  display: none;
 }
