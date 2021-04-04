@@ -8,12 +8,7 @@ const itemSchema = new mongoose.Schema({
   wowId: {
     type: Number,
     required: true,
-  },
-  bossId: {
-    type: mongoose.SchemaTypes.ObjectId,
-    required: true,
-    ref: "boss",
-  },
+  }
 });
 
 module.exports = mongoose.model("Item", itemSchema);

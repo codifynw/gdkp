@@ -22,7 +22,6 @@ const lootSchema = new mongoose.Schema(
     },
     bossId: {
       type: mongoose.SchemaTypes.ObjectId,
-      required: true,
       ref: "boss",
     },
   },
