@@ -8,12 +8,8 @@ const lootSchema = new mongoose.Schema(
     price: {
       type: Number,
     },
-    customName: {
-      type: String,
-    },
     wowId: {
-      type: Number,
-      required: true,
+      type: Number
     },
     raidId: {
       type: mongoose.SchemaTypes.ObjectId,

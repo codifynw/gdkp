@@ -13,20 +13,6 @@ dotenv.config({ path: "./config/config.env" });
 // LOAD DB
 connectDB();
 
-
-
-const BlizzAPI = require('blizzapi');
-
-const BnetApi = new BlizzAPI({
-  region: 'us',
-  clientId:  process.env.API_BATTLENET_KEY,
-  clientSecret: process.env.API_BATTLENET_SECRET
-});
-
-const data = BnetApi.query('/data/wow/item/19019?namespace=static-classic-us&locale=en_US').then((data) => {
-  console.log(data);
-});
-
 // App setup
 const app = express();
 const server = app.listen(PORT, function () {

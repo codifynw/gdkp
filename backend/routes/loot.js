@@ -1,15 +1,18 @@
 const express = require("express");
 const router = express.Router();
 const Loot = require("../models/loot");
+const BlizzAPI = require('blizzapi');
+
+const BnetApi = new BlizzAPI({
+  region: 'us',
+  clientId:  process.env.API_BATTLENET_KEY,
+  clientSecret: process.env.API_BATTLENET_SECRET
+});
 
 // GET ALL
-router.get("/", async (req, res) => {
-  try {
-    const loots = await Loot.find();
-    res.json(loots);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
+router.get("/", getAllLoot, getBlizzardData, async (req, res) => {
+  console.log('lootItem.blizzData should be defined')
+  res.json(res.loot);
 });
 
 // GET
@@ -64,6 +67,34 @@ router.delete("/:id", getLoot, async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
+// GET BLIZZARD DATA
+async function getBlizzardData(req, res, next) {
+  if (res.loot === null) {
+    next()
+  }
+
+  await Promise.all(res.loot.map(async (lootItem) => {
+    if (lootItem.wowId !== null) {
+      lootItem.blizzData = await BnetApi.query(`/data/wow/item/${lootItem.wowId}?namespace=static-classic-us&locale=en_US`)
+    }
+  }));
+  
+  next()
+}
+
+async function getAllLoot(req, res, next) {
+  let loots;
+
+  try {
+    loots = await Loot.find().lean();
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+
+  res.loot = loots;
+  next()
+}
 
 async function getLoot(req, res, next) {
   let loot;
