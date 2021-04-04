@@ -6,6 +6,11 @@ body {
   margin: 0;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .landing-container {
   text-transform: uppercase;
   letter-spacing: 0.5em;
@@ -41,8 +46,55 @@ body {
   padding-bottom: 0.8em;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.75);
-  transition: all 0.4s;
 }
 .landing-option:hover {
   color: rgba(255, 255, 255, 1);
+}
+
+.option-scene {
+  width: 200px;
+  height: 100px;
+  perspective: 600px;
+  margin: 0 auto;
+  transition: all 1s;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: all 1s;
+  transform: translateZ(-100px);
+  transform-style: preserve-3d;
+}
+
+.cube__face {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  background: black;
+  white-space: nowrap;
+}
+
+.cube__face--front {
+  transform: rotateY(0deg);
+}
+.cube__face--right {
+  transform: rotateY(90deg);
+}
+.cube__face--back {
+  transform: rotateY(180deg);
+}
+.cube__face--left {
+  transform: rotateY(-90deg);
+}
+.cube__face--top {
+  transform: rotateX(90deg);
+}
+.cube__face--bottom {
+  transform: rotateX(-90deg);
+}
+
+.option-scene:hover .cube {
+  transform: translateZ(-100px) rotateX(-180deg);
 }
