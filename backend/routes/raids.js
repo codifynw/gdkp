@@ -3,9 +3,11 @@ const router = express.Router();
 const Raid = require("../models/raid");
 const Boss = require("../models/boss");
 const Loot = require("../models/loot");
+const mongoose = require("mongoose");
 
 // GET ALL
 router.get("/", async (req, res) => {
+  console.log('hey')
   try {
     const raids = await Raid.find();
     res.json(raids);
@@ -76,6 +78,31 @@ router.get("/:id/loot/:bossId", getLoot, (req, res) => {
 // GET LOOT IN RAID
 router.get("/:id/loot", getLoot, (req, res) => {
   res.json(res.loot);
+});
+
+// GET GOLD IN RAID
+router.get("/:id/gold", getLoot, (req, res) => {
+  Loot.aggregate(
+    [
+      { $match: { raidId: new mongoose.Types.ObjectId(req.params.id) } },      
+      {
+        $group: {
+          _id: "$raidId",
+          total: {
+            $sum: "$price"
+          }
+        }
+      }
+    ],
+    function(err, result) {
+      if (err) {
+        res.send(err);
+      } else {
+        res.json(result);
+      }
+    }
+  );
+
 });
 
 async function getRaid(req, res, next) {

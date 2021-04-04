@@ -1,3 +1,7 @@
 .item-control-delete {
   position: absolute;
 }
+
+.item-row a {
+  text-align: left;
+}

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Item from "../item/Item";
 import EditItem from "../item/EditItem";
+import AddItem from "../item/AddItem";
 import "./boss.css";
 
 const Boss = ({ name, image, raidId, bossId }) => {
-  let overlayText = "";
-  let hasLoot = false;
   const [loot, setLoot] = useState([]);
+  let hasLoot = false;
   const loggedIn = true;
+  let overlayText = "";
 
   useEffect(() => {
     requestLoot();
@@ -36,7 +37,7 @@ const Boss = ({ name, image, raidId, bossId }) => {
     );
   }
 
-  function onClickFunction() {
+  function addItem() {
     console.log("do it");
   }
 
@@ -48,7 +49,7 @@ const Boss = ({ name, image, raidId, bossId }) => {
         style={{ backgroundImage: `url(${image})` }}
       ></div>
       <div className="boss-title">{name}</div>
-      <div class="grad-filter-up"></div>
+      <div className="grad-filter-up"></div>
 
       {loggedIn ? (
         <div className="loot-wrapper">
@@ -57,11 +58,13 @@ const Boss = ({ name, image, raidId, bossId }) => {
               buyer={lootItem.buyer}
               price={lootItem.price}
               itemKey={lootItem._id}
+              key={lootItem._id}
               customName={lootItem.customName}
               wowId={lootItem.wowId}
             />
           ))}
-          <button onClick={onClickFunction}>Add Item</button>;
+          <AddItem raidId={raidId} bossId={bossId} />
+          {/* <button onClick={addItem}>Add Item</button>; */}
         </div>
       ) : (
         <div className="loot-wrapper">
@@ -69,7 +72,7 @@ const Boss = ({ name, image, raidId, bossId }) => {
             <Item
               buyer={lootItem.buyer}
               price={lootItem.price}
-              itemKey={lootItem._id}
+              key={lootItem._id}
               customName={lootItem.customName}
               wowId={lootItem.wowId}
             />

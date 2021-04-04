@@ -3,11 +3,16 @@ import Boss from "../boss/Boss";
 
 const Raid = () => {
   const [bosses, setBosses] = useState([]);
+  const [totalGold, setTotalGold] = useState(0);
   let raidId = "6062b56dff6f03856f196fe8";
 
   useEffect(() => {
     requestBosses();
   }, []);
+
+  useEffect(() => {
+    requestTotalGold();
+  }, 0);
 
   let beNiceString = "<BE NICE>";
 
@@ -17,7 +22,11 @@ const Raid = () => {
     setBosses(json);
   }
 
-  console.log("BOSSES: ", bosses);
+  async function requestTotalGold() {
+    const res = await fetch(`/raids/${raidId}/gold`);
+    const json = await res.json();
+    setTotalGold(json[0].total);
+  }
 
   return (
     <div>
@@ -35,7 +44,7 @@ const Raid = () => {
           </div>
           <div className="raid-stat">
             <div className="raid-stat-key sub-guild">GOLD</div>
-            <div className="raid-stat-value guild-name">2,300g</div>
+            <div className="raid-stat-value guild-name">{totalGold}g</div>
           </div>
           <div className="raid-stat">
             <div className="raid-stat-key sub-guild">SPLIT</div>
@@ -53,6 +62,7 @@ const Raid = () => {
               image={boss.image}
               raidId={raidId}
               bossId={boss._id}
+              key={boss._id}
               customName={boss.customName}
             />
           ))
