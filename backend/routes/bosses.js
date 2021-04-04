@@ -18,7 +18,7 @@ router.get("/:id", getBoss, (req, res) => {
 });
 
 // GET ITEMS FROM 1
-router.get("/:id/items", getBoss, (req, res) => {
+router.get("/:id/lootTable", getBoss, (req, res) => {
   // TODO
   console.log("GET LOOT FROM 1");
   console.log(res.boss);
