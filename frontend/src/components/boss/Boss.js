@@ -11,14 +11,10 @@ const Boss = ({ name, image, raidId, bossId }) => {
   let overlayText = "";
 
   useEffect(() => {
-    requestLoot();
-  }, []);
-
-  async function requestLoot() {
-    const res = await fetch(`/raids/${raidId}/loot/${bossId}`);
-    const json = await res.json();
-    setLoot(json);
-  }
+    fetch(`/raids/${raidId}/loot/${bossId}`)
+      .then((response) => response.json())
+      .then((json) => setLoot(json));
+  }, [loot]);
 
   if (loot.length) {
     hasLoot = true;
