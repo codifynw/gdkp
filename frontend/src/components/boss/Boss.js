@@ -59,7 +59,7 @@ const Boss = ({ name, image, raidId, bossId }) => {
               wowId={lootItem.wowId}
             />
           ))}
-          <AddItem raidId={raidId} bossId={bossId} />
+          <AddItem raidId={raidId} bossId={bossId} key={bossId} />
           {/* <button onClick={addItem}>Add Item</button>; */}
         </div>
       ) : (

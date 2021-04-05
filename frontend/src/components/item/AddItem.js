@@ -14,17 +14,16 @@ const AddItem = ({ raidId, bossId }) => {
       price: yup.number().required().positive().integer(),
     }),
   });
-  const dataSource = ["Bracers", "Sword", "Hat"];
 
   useEffect(() => {
-    requestBossLoot();
+    console.log("use effect: ", bossId);
+    fetch(`/lootTables/boss/${bossId}`)
+      .then((response) => response.json())
+      .then((json) => setBossLoot(json.map((item) => item.name)))
+      .catch((err) => {
+        console.log("Error Reading data " + err);
+      });
   }, []);
-
-  async function requestBossLoot() {
-    const res = await fetch("/bosses/:id/lootTable");
-    const json = await res.json();
-    setBossLoot(json);
-  }
 
   const onSubmit = (data) => {
     data.bossId = bossId;
@@ -40,11 +39,11 @@ const AddItem = ({ raidId, bossId }) => {
         name="name"
         label="Item"
         autoComplete="off"
-        list="itemList"
+        list={bossId}
         {...register("name")}
       />
-      <datalist id="itemList">
-        {dataSource.map((item) => (
+      <datalist id={bossId}>
+        {bossLoot.map((item) => (
           <option key={item} value={item} />
         ))}
       </datalist>
