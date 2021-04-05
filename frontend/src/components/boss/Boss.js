@@ -14,7 +14,7 @@ const Boss = ({ name, image, raidId, bossId }) => {
     fetch(`/raids/${raidId}/loot/${bossId}`)
       .then((response) => response.json())
       .then((json) => setLoot(json));
-  }, [loot]);
+  }, []);
 
   if (loot.length) {
     hasLoot = true;
@@ -37,7 +37,6 @@ const Boss = ({ name, image, raidId, bossId }) => {
         style={{ backgroundImage: `url(${image})` }}
       ></div>
       <div className="boss-title">{name}</div>
-      <div className="grad-filter-up"></div>
       {loggedIn ? (
         <div className="loot-wrapper">
           {loot?.map((lootItem) => (
