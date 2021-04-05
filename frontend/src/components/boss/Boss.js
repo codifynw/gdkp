@@ -25,14 +25,6 @@ const Boss = ({ name, image, raidId, bossId }) => {
         .toLocaleString() + "g";
   }
 
-  function TotalLoot(props) {
-    return props.hasLoot ? (
-      <div className="overlay-text total-gold">{props.overlayText}</div>
-    ) : (
-      <div className="overlay-text tbd-overlay">{props.overlayText}</div>
-    );
-  }
-
   function addItem() {
     console.log("do it");
   }
@@ -46,7 +38,6 @@ const Boss = ({ name, image, raidId, bossId }) => {
       ></div>
       <div className="boss-title">{name}</div>
       <div className="grad-filter-up"></div>
-
       {loggedIn ? (
         <div className="loot-wrapper">
           {loot?.map((lootItem) => (
@@ -75,8 +66,11 @@ const Boss = ({ name, image, raidId, bossId }) => {
           ))}
         </div>
       )}
-
-      <TotalLoot hasLoot={hasLoot} overlayText={overlayText} />
+      {hasLoot ? (
+        <div className="overlay-text total-gold">{overlayText}</div>
+      ) : (
+        <div className="overlay-text tbd-overlay">{overlayText}</div>
+      )}
     </div>
   );
 };
