@@ -9,7 +9,7 @@ class Landing extends Component {
         <div className="landing-container">
           <span className="gold">TIME IS MONEY, FRIEND</span>
           <span className="landing-title">GDKP PRO</span>
-          &mdash; <span className="gold">LIVE BETA</span> &mdash;
+          &mdash; <span className="gold">LIVE ALPHA</span> &mdash;
         </div>
         <div className="landing-options">
           <div className="landing-option">
