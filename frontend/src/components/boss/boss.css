@@ -31,9 +31,8 @@
 }
 .loot-wrapper {
   position: absolute;
-  bottom: 0px;
+  top: 100px;
   width: 100%;
-  min-height: 160px;
 }
 .grad-filter-up {
   z-index: 0;
@@ -124,5 +123,8 @@
 /* Style the back side */
 .flip-card-back {
   background-color: #090d00;
+  background-image: url("./backFrame.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
   transform: rotateY(180deg);
 }
