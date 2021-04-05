@@ -7,7 +7,7 @@ import "./boss.css";
 const Boss = ({ name, image, raidId, bossId }) => {
   const [loot, setLoot] = useState([]);
   let hasLoot = false;
-  const loggedIn = true;
+  const loggedIn = false;
   let overlayText = "";
 
   useEffect(() => {
