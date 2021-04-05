@@ -31,45 +31,51 @@ const Boss = ({ name, image, raidId, bossId }) => {
 
   // With JSX!
   return (
-    <div key={bossId} className="boss-wrap">
-      <div
-        className={`boss-image ${hasLoot ? "" : "alive"}`}
-        style={{ backgroundImage: `url(${image})` }}
-      ></div>
-      <div className="boss-title">{name}</div>
-      {loggedIn ? (
-        <div className="loot-wrapper">
-          {loot?.map((lootItem) => (
-            <EditItem
-              buyer={lootItem.buyer}
-              price={lootItem.price}
-              itemKey={lootItem._id}
-              key={lootItem._id}
-              customName={lootItem.customName}
-              wowId={lootItem.wowId}
-            />
-          ))}
-          <AddItem raidId={raidId} bossId={bossId} key={bossId} />
-          {/* <button onClick={addItem}>Add Item</button>; */}
+    <div className="flip-card boss-wrap">
+      <div key={bossId} className="flip-card-inner">
+        <div className="flip-card-front">
+          <div
+            className={`boss-image ${hasLoot ? "" : "alive"}`}
+            style={{ backgroundImage: `url(${image})` }}
+          ></div>
+          <div className="boss-title">{name}</div>
+          {hasLoot ? (
+            <div className="overlay-text total-gold">{overlayText}</div>
+          ) : (
+            <div className="overlay-text tbd-overlay">{overlayText}</div>
+          )}
         </div>
-      ) : (
-        <div className="loot-wrapper">
-          {loot?.map((lootItem) => (
-            <Item
-              buyer={lootItem.buyer}
-              price={lootItem.price}
-              key={lootItem._id}
-              customName={lootItem.customName}
-              wowId={lootItem.wowId}
-            />
-          ))}
+        <div className="flip-card-back">
+          {loggedIn ? (
+            <div className="loot-wrapper">
+              {loot?.map((lootItem) => (
+                <EditItem
+                  buyer={lootItem.buyer}
+                  price={lootItem.price}
+                  itemKey={lootItem._id}
+                  key={lootItem._id}
+                  customName={lootItem.customName}
+                  wowId={lootItem.wowId}
+                />
+              ))}
+              <AddItem raidId={raidId} bossId={bossId} key={bossId} />
+              {/* <button onClick={addItem}>Add Item</button>; */}
+            </div>
+          ) : (
+            <div className="loot-wrapper">
+              {loot?.map((lootItem) => (
+                <Item
+                  buyer={lootItem.buyer}
+                  price={lootItem.price}
+                  key={lootItem._id}
+                  customName={lootItem.customName}
+                  wowId={lootItem.wowId}
+                />
+              ))}
+            </div>
+          )}
         </div>
-      )}
-      {hasLoot ? (
-        <div className="overlay-text total-gold">{overlayText}</div>
-      ) : (
-        <div className="overlay-text tbd-overlay">{overlayText}</div>
-      )}
+      </div>
     </div>
   );
 };
