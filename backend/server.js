@@ -91,6 +91,8 @@ const lootRouter = require("./routes/loot");
 app.use("/loot", lootRouter);
 const itemsRouter = require("./routes/items");
 app.use("/items", itemsRouter);
+const lootTablesRouter = require("./routes/lootTables");
+app.use("/lootTables", lootTablesRouter);
 
 // Files
 // Serve static files from the React app

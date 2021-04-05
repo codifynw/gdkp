@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import "./item.css";
 
 const AddItem = ({ raidId, bossId }) => {
+  const [bossLoot, setBossLoot] = useState([]);
   const { register, handleSubmit, errors } = useForm({
     mode: "onBlur",
     validationSchema: yup.object({
@@ -13,6 +15,16 @@ const AddItem = ({ raidId, bossId }) => {
     }),
   });
   const dataSource = ["Bracers", "Sword", "Hat"];
+
+  useEffect(() => {
+    requestBossLoot();
+  }, []);
+
+  async function requestBossLoot() {
+    const res = await fetch("/bosses/:id/lootTable");
+    const json = await res.json();
+    setBossLoot(json);
+  }
 
   const onSubmit = (data) => {
     data.bossId = bossId;
@@ -27,7 +39,7 @@ const AddItem = ({ raidId, bossId }) => {
         type="text"
         name="name"
         label="Item"
-        autocomplete="off"
+        autoComplete="off"
         list="itemList"
         {...register("name")}
       />

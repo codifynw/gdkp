@@ -5,7 +5,7 @@ GET http://localhost:5000/bosses
 GET http://localhost:5000/bosses/606256cfecf5d57852bb6efc/loot
 
 ### GET ITEMS FROM ONE
-GET http://localhost:5000/bosses/606256cfecf5d57852bb6efc/items
+GET http://localhost:5000/bosses/606256cfecf5d57852bb6efc/lootTable
 
 ### DELETE ONE
 DELETE http://localhost:5000/bosses
