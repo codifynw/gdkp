@@ -12,6 +12,7 @@ const AddItem = ({ raidId, bossId }) => {
       price: yup.number().required().positive().integer(),
     }),
   });
+  const dataSource = ["Bracers", "Sword", "Hat"];
 
   const onSubmit = (data) => {
     data.bossId = bossId;
@@ -21,7 +22,20 @@ const AddItem = ({ raidId, bossId }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="text" placeholder="item" name="name" {...register("name")} />
+      {/* <input type="text" placeholder="item" name="name" {...register("name")} /> */}
+      <input
+        type="text"
+        name="name"
+        label="Item"
+        autocomplete="off"
+        list="itemList"
+        {...register("name")}
+      />
+      <datalist id="itemList">
+        {dataSource.map((item) => (
+          <option key={item} value={item} />
+        ))}
+      </datalist>
       <input
         type="text"
         placeholder="buyer"
