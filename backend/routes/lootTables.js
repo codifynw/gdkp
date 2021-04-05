@@ -21,6 +21,8 @@ router.get('/:id', getLootTable, (req, res) => {
 router.post('/', async (req, res) => {
     const lootTable = new LootTable ({
         name: req.body.name,
+        bossId: req.body.bossId,
+        wowId: req.body.wowId
     })
 
     try {
@@ -54,6 +56,32 @@ router.delete('/:id', getLootTable, async (req, res) => {
     }
 })
 
+
+// GET FROM ONE BOSS
+router.get('/boss/:bossId', getLootFromBoss, async (req, res) => {
+    res.json(res.lootTable)
+})
+
+async function getLootFromBoss(req, res, next) {
+    let lootTable
+    let bossId = req.params.bossId;
+    console.log('bossId: ', bossId);
+
+    try {
+        lootTable = await LootTable.find({ 'bossId': req.params.bossId });
+        if (lootTable === null) {
+            return res.status(404).json({ message: 'Cannot find lootTable' })
+        }
+    } catch (error) {
+        console.log("ERROR ERROR")
+        return res.status(500).json({message: error.message})
+    }
+
+    res.lootTable = lootTable
+    next()
+}
+
+
 async function getLootTable(req, res, next) {
     let lootTable
 
@@ -70,5 +98,6 @@ async function getLootTable(req, res, next) {
     res.lootTable = lootTable
     next()
 }
+
 
 module.exports = router

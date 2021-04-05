@@ -1,37 +1,82 @@
+// Anub'Rekhan
+{
+    "name": "Desecrated Bracers",
+    "bossId": "60601f16ad3e1608f999660b",
+    "wowId": 22355
+},{
+    "name": "Desecrated Bindings",
+    "bossId": "60601f16ad3e1608f999660b",
+    "wowId": 22369
+},{
+    "name": "Desecrated Wristguards",
+    "bossId": "60601f16ad3e1608f999660b",
+    "wowId": 22362
+},{
+    "name": "Splinter of Atiesh",
+    "bossId": "60601f16ad3e1608f999660b",
+    "wowId": 22726
+},{
+    "name": "Band of Unanswered Prayers",
+    "bossId": "60601f16ad3e1608f999660b",
+    "wowId": 22939
+},{
+    "name": "Touch of Frost",
+    "bossId": "60601f16ad3e1608f999660b",
+    "wowId": 22935
+},{
+    "name": "Cryptfiend Silk Cloak",
+    "bossId": "60601f16ad3e1608f999660b",
+    "wowId": 22938
+},{
+    "name": "Wristguards of Vengeance",
+    "bossId": "60601f16ad3e1608f999660b",
+    "wowId": 22936
+},{
+    "name": "Frozen Rune",
+    "bossId": "60601f16ad3e1608f999660b",
+    "wowId": 22682
+}
+
+
+
+
 bosses = {
     {
-        "name": "Anub'Rekhan",
-        "_id": "60601f16ad3e1608f999660b",
-        "loot": [
-            {
-                "name": "Desecrated Bracers",
-                "wowId": 22355
-            },{
-                "name": "Desecrated Bindings",
-                "wowId": 22369
-            },{
-                "name": "Desecrated Wristguards",
-                "wowId": 22362
-            },{
-                "name": "Splinter of Atiesh",
-                "wowId": 22726
-            },{
-                "name": "Band of Unanswered Prayers",
-                "wowId": 22939
-            },{
-                "name": "Touch of Frost",
-                "wowId": 22935
-            },{
-                "name": "Cryptfiend Silk Cloak",
-                "wowId": 22938
-            },{
-                "name": "Wristguards of Vengeance",
-                "wowId": 22936
-            },{
-                "name": "Frozen Rune",
-                "wowId": 22682
-            }
-        ]
+        "name": "Desecrated Bracers",
+        "bossId": "60601f16ad3e1608f999660b",
+        "wowId": 22355
+    },{
+        "name": "Desecrated Bindings",
+        "bossId": "60601f16ad3e1608f999660b",
+        "wowId": 22369
+    },{
+        "name": "Desecrated Wristguards",
+        "bossId": "60601f16ad3e1608f999660b",
+        "wowId": 22362
+    },{
+        "name": "Splinter of Atiesh",
+        "bossId": "60601f16ad3e1608f999660b",
+        "wowId": 22726
+    },{
+        "name": "Band of Unanswered Prayers",
+        "bossId": "60601f16ad3e1608f999660b",
+        "wowId": 22939
+    },{
+        "name": "Touch of Frost",
+        "bossId": "60601f16ad3e1608f999660b",
+        "wowId": 22935
+    },{
+        "name": "Cryptfiend Silk Cloak",
+        "bossId": "60601f16ad3e1608f999660b",
+        "wowId": 22938
+    },{
+        "name": "Wristguards of Vengeance",
+        "bossId": "60601f16ad3e1608f999660b",
+        "wowId": 22936
+    },{
+        "name": "Frozen Rune",
+        "bossId": "60601f16ad3e1608f999660b",
+        "wowId": 22682
     },
     {
         "name": "Faerlina",
@@ -104,6 +149,7 @@ bosses = {
         "loot": [
             {
                 "name": "The Phylactery of Kel'Thuzad",
+                "bossId": "6062588fecf5d57852bb6efe",
                 "wowId": 22520
             },{
                 "name": "Hammer of the Twisting Nether",

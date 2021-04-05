@@ -1,0 +1,29 @@
+### GET ALL
+GET http://localhost:5000/lootTables/
+
+### GET ONE
+GET http://localhost:5000/lootTables/
+
+### GET FOR ONE BOSS
+GET http://localhost:5000/lootTables/boss/6062588fecf5d57852bb6efe
+
+### DELETE ONE
+DELETE http://localhost:5000/lootTables/id
+
+### UPDATE ONE
+PATCH http://localhost:5000/lootTables/id
+Content-Type: application/json
+
+{
+    "customName": "Desecrated Bracers"
+}
+
+### CREATE ONE Anub'Rekhan
+POST http://localhost:5000/lootTables
+Content-Type: application/json
+
+{
+    "name": "Ring of the Earthshatterer",
+    "bossId": "6062588fecf5d57852bb6efe",
+    "wowId": 23065
+}
