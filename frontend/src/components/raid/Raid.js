@@ -12,7 +12,7 @@ const Raid = () => {
 
   useEffect(() => {
     requestTotalGold();
-  }, 0);
+  }, [0]);
 
   let beNiceString = "<BE NICE>";
 
