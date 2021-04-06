@@ -6,10 +6,10 @@
 }
 
 .boss-wrap {
-  width: calc(100% / 5 - 60px);
+  width: 300px;
   height: 400px;
   margin: 30px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   position: relative;
 }
 
