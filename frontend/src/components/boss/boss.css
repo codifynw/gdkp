@@ -25,6 +25,7 @@
   transform: translateX(-50%);
   position: absolute;
   filter: sepia();
+  pointer-events: none;
 }
 .boss-image.alive {
   filter: opacity(1);
