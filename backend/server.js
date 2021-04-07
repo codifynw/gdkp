@@ -10,11 +10,19 @@ var Boss = require("./models/boss");
 // LOAD CONFIG
 dotenv.config({ path: "./config/config.env" });
 
+// LOAD CORS LOCALLY (TO INVESTIGATE)
+// if (process.env.NODE_ENV === 'development') {
+//   var cors = require('cors');
+//   app.use(cors());
+//  }
+
 // LOAD DB
 connectDB();
 
 // App setup
 const app = express();
+
+
 const server = app.listen(PORT, function () {
   console.log(`Listening on port ${PORT}`);
   console.log(`http://localhost:${PORT}`);
@@ -30,19 +38,6 @@ app.engine(
     layoutsDir: __dirname + "/views/",
   })
 );
-
-app.get("/raid", function (req, res) {
-  Boss.findOne().exec(function (error, boss) {
-    console.log(boss);
-    res.render("raid", {
-      layout: "raid",
-      boss: boss,
-    });
-  });
-
-  // NON TEMPLATE SOLUTION
-  // res.sendFile(path.join(__dirname + '/public/raid.html'));
-});
 
 app.get("/watch", function (req, res) {
   console.log("hi");
@@ -97,3 +92,8 @@ app.use("/lootTables", lootTablesRouter);
 // Files
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+});
