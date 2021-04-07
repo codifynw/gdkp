@@ -11,5 +11,23 @@
 }
 
 .leaderboard-title-wrap {
-  padding: 200px;
+  padding: 100px;
+}
+
+.bar-1 {
+  background-image: url("../../img/decorator1.svg");
+}
+
+.decorator {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 75px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.decorator-below {
+  transform: rotate(180deg) translateX(5px);
 }

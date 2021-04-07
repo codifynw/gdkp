@@ -54,7 +54,9 @@ const Raid = () => {
         </div>
       </div>
       <div class="boss-head-wrap">
-        <div class="section-title">BOSSES</div>
+        <div class="decorator bar-1"></div>
+        <div class="section-title large">BOSSES</div>
+        <div class="decorator bar-1 decorator-below"></div>
       </div>
       <div id="bosses">
         {!bosses.length ? (
@@ -73,7 +75,9 @@ const Raid = () => {
         )}
       </div>
       <div class="leaderboard-title-wrap">
-        <div class="section-title">LEADERBOARD</div>
+        <div class="decorator bar-1"></div>
+        <div class="section-title large">LEADERBOARD</div>
+        <div class="decorator bar-1 decorator-below"></div>
       </div>
     </div>
   );

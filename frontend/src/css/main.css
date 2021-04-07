@@ -162,7 +162,6 @@ body {
 
 .jumbo-wrap {
   position: relative;
-  background-color: #222222;
   width: 100%;
   color: white;
 }
@@ -215,5 +214,9 @@ nav {
 
 .section-title {
   font-size: 2em;
+  color: white;
+}
+.section-title.large {
+  font-size: 3.5em;
   color: white;
 }
