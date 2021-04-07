@@ -72,6 +72,9 @@ const Raid = () => {
           ))
         )}
       </div>
+      <div class="leaderboard-title-wrap">
+        <div class="section-title">LEADERBOARD</div>
+      </div>
     </div>
   );
 };
