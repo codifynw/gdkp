@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Boss from "../boss/Boss";
+import "./raid.css";
 
 const Raid = () => {
   const [bosses, setBosses] = useState([]);
@@ -51,6 +52,9 @@ const Raid = () => {
             <div className="raid-stat-value guild-name">57.5g</div>
           </div>
         </div>
+      </div>
+      <div class="boss-head-wrap">
+        <div class="section-title">BOSSES</div>
       </div>
       <div id="bosses">
         {!bosses.length ? (

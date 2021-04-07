@@ -1,0 +1,11 @@
+#bosses {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1600px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.boss-head-wrap {
+  padding: 30px;
+}

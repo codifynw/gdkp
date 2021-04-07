@@ -21,10 +21,6 @@ html {
   font-family: "Rakkas", cursive;
 }
 
-#bosses {
-  display: flex;
-  flex-wrap: wrap;
-}
 .item-row {
   position: relative;
   z-index: 5;
@@ -215,4 +211,9 @@ body {
 
 nav {
   display: none;
+}
+
+.section-title {
+  font-size: 2em;
+  color: white;
 }
