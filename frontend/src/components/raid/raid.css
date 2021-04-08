@@ -48,12 +48,12 @@
   position: absolute;
   display: flex;
   justify-content: space-between;
-  height: 400px;
+  height: 500px;
   width: 100%;
 }
 .corner-decorator {
   height: 100%;
-  width: 400px;
+  width: 500px;
   margin: 20px;
   background-position: center;
   background-repeat: no-repeat;
