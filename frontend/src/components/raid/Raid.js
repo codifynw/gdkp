@@ -38,24 +38,26 @@ const Raid = () => {
           <div className="corner-decorator top-left"></div>
           <div className="corner-decorator top-right"></div>
         </div>
-        <div className="jumbo-inner relative"></div>
-        {/* <div className="vignete"></div> */}
-        <div className="align-c">
-          <div className="strong guild-name bigger">{beNiceString}</div>
-          <div className="sub-guild bigger">NAXX GDKP</div>
-        </div>
-        <div className="raid-stats-wrap">
-          <div className="raid-stat">
-            <div className="raid-stat-key sub-guild">BOSSES</div>
-            <div className="raid-stat-value guild-name">1/15</div>
-          </div>
-          <div className="raid-stat">
-            <div className="raid-stat-key sub-guild">GOLD</div>
-            <div className="raid-stat-value guild-name">{totalGold}g</div>
-          </div>
-          <div className="raid-stat">
-            <div className="raid-stat-key sub-guild">SPLIT</div>
-            <div className="raid-stat-value guild-name">{split}g</div>
+        <div className="jumbo-inner relative">
+          <div className="abs-vert-c">
+            <div className="align-c">
+              <div className="strong guild-name bigger">{beNiceString}</div>
+              <div className="sub-guild bigger">NAXX GDKP</div>
+            </div>
+            <div className="raid-stats-wrap">
+              <div className="raid-stat">
+                <div className="raid-stat-key sub-guild">BOSSES</div>
+                <div className="raid-stat-value guild-name">1/15</div>
+              </div>
+              <div className="raid-stat">
+                <div className="raid-stat-key sub-guild">GOLD</div>
+                <div className="raid-stat-value guild-name">{totalGold}g</div>
+              </div>
+              <div className="raid-stat">
+                <div className="raid-stat-key sub-guild">SPLIT</div>
+                <div className="raid-stat-value guild-name">{split}g</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -84,6 +86,11 @@ const Raid = () => {
         <div className="decorator bar-1"></div>
         <div className="section-title large">LEADERBOARD</div>
         <div className="decorator bar-1 decorator-below"></div>
+      </div>
+
+      <div className="corner-decorators">
+        <div className="corner-decorator bottom-left"></div>
+        <div className="corner-decorator bottom-right"></div>
       </div>
     </div>
   );

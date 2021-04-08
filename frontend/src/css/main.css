@@ -136,29 +136,23 @@ body {
 }
 .raid-stats-wrap {
   z-index: 1;
-  position: relative;
   display: flex;
-  justify-content: space-evenly;
-  max-width: 500px;
   margin: 0 auto;
+  position: relative;
   padding-bottom: 50px;
+  justify-content: space-evenly;
 }
 .raid-stat {
   text-align: center;
+  margin: 0 50px;
 }
 .raid-stat-key {
-  color: gold;
+  color: #ebbc75;
 }
 
 .raid-stat-value {
   font-size: 20px;
 }
-
-/* 
-.raid-wrap {
-  margin: 0px 10px;
-  max-width: 1600px;
-} */
 
 .jumbo-wrap {
   position: relative;
@@ -186,21 +180,14 @@ body {
 }
 
 .guild-name {
-  font-size: 26px;
+  font-size: 4em;
   letter-spacing: 0.15em;
 }
 
-.guild-name.bigger {
-  font-size: 36px;
-}
-
-.sub-guild.bigger {
-  font-size: 20px;
-}
-
 .sub-guild {
-  letter-spacing: 0.4em;
-  color: gold;
+  font-size: 3em;
+  letter-spacing: 0.2em;
+  color: #ebbc75;
 }
 
 .item-buyer {
@@ -219,4 +206,7 @@ nav {
 .section-title.large {
   font-size: 3.5em;
   color: white;
+}
+
+.corner-decorator {
 }
