@@ -5,6 +5,7 @@ import "./raid.css";
 const Raid = () => {
   const [bosses, setBosses] = useState([]);
   const [totalGold, setTotalGold] = useState(0);
+  const [split, setSplit] = useState(0);
   let raidId = "6062b56dff6f03856f196fe8";
 
   useEffect(() => {
@@ -27,6 +28,7 @@ const Raid = () => {
     const res = await fetch(`/raids/${raidId}/gold`);
     const json = await res.json();
     setTotalGold(json[0].total);
+    setSplit(json[0].total / 40);
   }
 
   return (
@@ -49,14 +51,14 @@ const Raid = () => {
           </div>
           <div className="raid-stat">
             <div className="raid-stat-key sub-guild">SPLIT</div>
-            <div className="raid-stat-value guild-name">57.5g</div>
+            <div className="raid-stat-value guild-name">{split}g</div>
           </div>
         </div>
       </div>
-      <div class="boss-head-wrap">
-        <div class="decorator bar-1"></div>
-        <div class="section-title large">BOSSES</div>
-        <div class="decorator bar-1 decorator-below"></div>
+      <div className="boss-head-wrap">
+        <div className="decorator bar-1"></div>
+        <div className="section-title large">BOSSES</div>
+        <div className="decorator bar-1 decorator-below"></div>
       </div>
       <div id="bosses">
         {!bosses.length ? (
@@ -74,10 +76,10 @@ const Raid = () => {
           ))
         )}
       </div>
-      <div class="leaderboard-title-wrap">
-        <div class="decorator bar-1"></div>
-        <div class="section-title large">LEADERBOARD</div>
-        <div class="decorator bar-1 decorator-below"></div>
+      <div className="leaderboard-title-wrap">
+        <div className="decorator bar-1"></div>
+        <div className="section-title large">LEADERBOARD</div>
+        <div className="decorator bar-1 decorator-below"></div>
       </div>
     </div>
   );
