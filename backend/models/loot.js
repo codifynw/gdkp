@@ -2,6 +2,9 @@ const mongoose = require("mongoose");
 
 const lootSchema = new mongoose.Schema(
   {
+    name: {
+      type: String
+    },
     buyer: {
       type: String,
     },

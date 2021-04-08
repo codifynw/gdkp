@@ -19,27 +19,44 @@ const AddItem = ({ raidId, bossId }) => {
     console.log("use effect: ", bossId);
     fetch(`/lootTables/boss/${bossId}`)
       .then((response) => response.json())
-      .then((json) => setBossLoot(json.map((item) => item.name)))
+      .then((json) =>
+        setBossLoot(
+          json.map((item) => ({
+            name: item.name,
+            wowId: item.wowId,
+            id: item.id,
+            key: item.id,
+          }))
+        )
+      )
       .catch((err) => {
         console.log("Error Reading data " + err);
       });
   }, []);
 
   const onSubmit = async (data) => {
+    console.log("bossLoot: ", bossLoot);
+    console.log("data: ", data);
     const { name, buyer, price } = data;
 
-    var formData = new FormData();
-    formData.append("name", name);
-    formData.append("buyer", buyer);
-    formData.append("price", price);
+    // var formData = new FormData();
+    // formData.append("name", name);
+    // formData.append("buyer", buyer);
+    // formData.append("price", price);
 
-    const res = await fetch("http://localhost:4000/items/", {
+    const res = await fetch("/loot/", {
       method: "POST",
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },
-      body: formData,
+      body: JSON.stringify({
+        name: name,
+        buyer: buyer,
+        price: price,
+        raidId: raidId,
+        bossId: bossId,
+      }),
     });
 
     if (res.status === 200) {
@@ -62,7 +79,7 @@ const AddItem = ({ raidId, bossId }) => {
       />
       <datalist id={bossId}>
         {bossLoot.map((item) => (
-          <option key={item} value={item} />
+          <option key={item._id} value={item.name} data-value={item.wowId} />
         ))}
       </datalist>
       <input
