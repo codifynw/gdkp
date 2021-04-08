@@ -31,3 +31,26 @@
 .decorator-below {
   transform: rotate(180deg) translateX(5px);
 }
+
+.corner-decorators {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  height: 400px;
+  width: 100%;
+}
+.corner-decorator {
+  height: 100%;
+  width: 400px;
+  margin: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../../img/corner-decorator.svg");
+}
+.corner-decorator.top-right {
+  transform: scaleX(-1) rotate(-90deg);
+}
+.corner-decorator.top-left {
+  transform: rotate(270deg);
+}

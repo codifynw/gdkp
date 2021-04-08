@@ -34,6 +34,10 @@ const Raid = () => {
   return (
     <div>
       <div className="jumbo-wrap">
+        <div className="corner-decorators">
+          <div className="corner-decorator top-left"></div>
+          <div className="corner-decorator top-right"></div>
+        </div>
         <div className="jumbo-inner relative"></div>
         {/* <div className="vignete"></div> */}
         <div className="align-c">

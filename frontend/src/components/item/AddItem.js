@@ -44,26 +44,20 @@ const AddItem = ({ raidId, bossId }) => {
     // formData.append("buyer", buyer);
     // formData.append("price", price);
 
-    const res = await fetch("/loot/", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name,
-        buyer: buyer,
-        price: price,
-        raidId: raidId,
-        bossId: bossId,
-      }),
-    });
-
-    if (res.status === 200) {
-      console.log("it was added");
-    } else {
-      console.log("error: ", res);
-    }
+    // const res = await fetch("/loot/", {
+    //   method: "POST",
+    //   mode: "cors",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     name: name,
+    //     buyer: buyer,
+    //     price: price,
+    //     raidId: raidId,
+    //     bossId: bossId,
+    //   }),
+    // });
   };
 
   return (

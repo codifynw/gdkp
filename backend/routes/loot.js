@@ -15,6 +15,11 @@ router.get("/", getAllLoot, getBlizzardData, async (req, res) => {
   res.json(res.loot);
 });
 
+// GET ALL WITHOUT BLIZZ DATA
+// router.get("/", getAllLoot, async (req, res) => {
+//   res.json(res.loot);
+// });
+
 // GET
 router.get("/:id", getLoot, (req, res) => {
   res.json(res.loot);
