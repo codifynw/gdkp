@@ -25,10 +25,28 @@ const AddItem = ({ raidId, bossId }) => {
       });
   }, []);
 
-  const onSubmit = (data) => {
-    data.bossId = bossId;
-    data.raidId = raidId;
-    console.log("data:", data);
+  const onSubmit = async (data) => {
+    const { name, buyer, price } = data;
+
+    var formData = new FormData();
+    formData.append("name", name);
+    formData.append("buyer", buyer);
+    formData.append("price", price);
+
+    const res = await fetch("http://localhost:4000/items/", {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: formData,
+    });
+
+    if (res.status === 200) {
+      console.log("it was added");
+    } else {
+      console.log("error: ", res);
+    }
   };
 
   return (

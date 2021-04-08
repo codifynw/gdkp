@@ -1,46 +1,27 @@
 const express = require("express");
 const socket = require("socket.io");
 const PORT = process.env.PORT || 5000;
-const connectDB = require("./config/db");
-const dotenv = require("dotenv");
 var path = require("path");
-const handlebars = require("express-handlebars");
 var Boss = require("./models/boss");
 
 // LOAD CONFIG
+const dotenv = require("dotenv");
 dotenv.config({ path: "./config/config.env" });
 
-// LOAD CORS LOCALLY (TO INVESTIGATE)
-// if (process.env.NODE_ENV === 'development') {
-//   var cors = require('cors');
-//   app.use(cors());
-//  }
-
 // LOAD DB
+const connectDB = require("./config/db");
 connectDB();
 
 // App setup
 const app = express();
 
+// LOAD CORS
+var cors = require('cors');
+app.use(cors());
 
 const server = app.listen(PORT, function () {
   console.log(`Listening on port ${PORT}`);
   console.log(`http://localhost:${PORT}`);
-});
-
-//Sets our app to use the handlebars engine
-app.set("view engine", "handlebars");
-
-//Sets handlebars configurations
-app.engine(
-  "handlebars",
-  handlebars({
-    layoutsDir: __dirname + "/views/",
-  })
-);
-
-app.get("/watch", function (req, res) {
-  console.log("hi");
 });
 
 // Socket setup
