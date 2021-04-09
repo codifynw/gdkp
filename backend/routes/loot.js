@@ -55,6 +55,9 @@ router.patch("/:id", getLoot, async (req, res) => {
   if (req.body.customName != null) {
     res.loot.customName = req.body.customName;
   }
+  if (req.body.price != null) {
+    res.loot.price = req.body.price;
+  }
   try {
     const updatedLoot = await res.loot.save();
     res.json(updatedLoot);
@@ -75,6 +78,7 @@ router.delete("/:id", getLoot, async (req, res) => {
 
 // GET BLIZZARD DATA
 async function getBlizzardData(req, res, next) {
+  console.log('getBlizzardData')
   if (res.loot === null) {
     next()
   }

@@ -4,10 +4,16 @@ const Raid = require("../models/raid");
 const Boss = require("../models/boss");
 const Loot = require("../models/loot");
 const mongoose = require("mongoose");
+const BlizzAPI = require('blizzapi');
+
+const BnetApi = new BlizzAPI({
+  region: 'us',
+  clientId:  process.env.API_BATTLENET_KEY,
+  clientSecret: process.env.API_BATTLENET_SECRET
+});
 
 // GET ALL
 router.get("/", async (req, res) => {
-  console.log('hey')
   try {
     const raids = await Raid.find();
     res.json(raids);
@@ -67,7 +73,8 @@ router.get("/:id/bosses", getRaid, getBosses, (req, res) => {
 });
 
 // GET LOOT BY BOSS
-router.get("/:id/loot/:bossId", getLoot, (req, res) => {
+router.get("/:id/loot/:bossId", getLoot, getBlizzardData, async (req, res) => {
+  console.log('GET LOOT BY BOSS')
   let bossId = req.params.bossId;
   res.loot = res.loot.filter(function (e) {
     return e.bossId == bossId;
@@ -141,6 +148,7 @@ async function getBosses(req, res, next) {
   next();
 }
 
+// GET ALL LOOT
 async function getLoot(req, res, next) {
   let loot;
   let raidId = req.params.id;
@@ -148,7 +156,7 @@ async function getLoot(req, res, next) {
   try {
     loot = await Loot.find({
       raidId: raidId,
-    });
+    }).lean();
 
     if (loot === null) {
       return res.status(404).json({ message: "Cannot find loot" });
@@ -161,5 +169,26 @@ async function getLoot(req, res, next) {
   res.loot = loot;
   next();
 }
+
+
+// GET BLIZZARD DATA FOR LOOT
+async function getBlizzardData(req, res, next) {
+  if (res.loot === null) {
+    next()
+  }
+
+  await Promise.all(res.loot.map(async (lootItem) => {
+    console.log('add blizzData')
+    lootItem.blizzData = {};
+    if (lootItem.wowId !== null) {
+      lootItem.blizzData = await BnetApi.query(`/data/wow/item/${lootItem.wowId}?namespace=static-classic-us&locale=en_US`)
+    }
+  }));
+  
+  console.log('go next with res:')
+  console.log(res)
+  next()
+}
+
 
 module.exports = router;

@@ -5,14 +5,14 @@ GET http://localhost:5000/loot
 GET http://localhost:5000/loot/
 
 ### DELETE ONE
-DELETE http://localhost:5000/loot/60642fe96c08c48338999d3a
+DELETE http://localhost:5000/loot/60709cb5a4004141f7591cf8
 
 ### UPDATE ONE
-PATCH http://localhost:5000/loot/6064455cb1bcf78461698751
+PATCH http://localhost:5000/loot/60709c6fa4004141f7591cf6
 Content-Type: application/json
 
 {
-    "customName": "Desecrated Bracers"
+    "bossId": "60617e233bc3b72156e3e8ad"
 }
 
 ### CREATE ONE
@@ -20,10 +20,9 @@ POST http://localhost:5000/loot
 Content-Type: application/json
 
 {
-    "buyer": "Mandrex",
-    "customName": "Desecrated Bracers",
-    "price": 300,
-    "wowId": 22355,
+    "buyer": "Butteredrice",
+    "price": 6,
     "raidId": "6062b56dff6f03856f196fe8",
-    "bossId": "60601f16ad3e1608f999660b"
+    "bossId": "60625223b3ecaf764a8fd162",
+    "wowId": 23038
 }

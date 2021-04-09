@@ -24,7 +24,7 @@ const raidSchema = new mongoose.Schema({
     unique: true,
     required: true,
     default: () => nanoid(),
-  },
+  }
 });
 
 module.exports = mongoose.model("Raid", raidSchema);

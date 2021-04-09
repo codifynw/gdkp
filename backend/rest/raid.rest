@@ -34,7 +34,7 @@ GET http://localhost:5000/raids/6062b56dff6f03856f196fe8/bosses
 GET http://localhost:5000/raids/6062b56dff6f03856f196fe8/loot
 
 ### GET LOOT FROM SPECIFIC BOSS IN RAID
-GET http://localhost:5000/raids/6062b56dff6f03856f196fe8/loot/606256cfecf5d2bb6
+GET http://localhost:5000/raids/6062b56dff6f03856f196fe8/loot/60601f16ad3e1608f999660b
 Content-Type: application/json
 
 

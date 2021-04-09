@@ -18,12 +18,12 @@ Content-Type: application/json
     "customName": "Desecrated Bracers"
 }
 
-### CREATE ONE Anub'Rekhan
+### CREATE ONE 
 POST http://localhost:5000/lootTables
 Content-Type: application/json
 
 {
-    "name": "Ring of the Earthshatterer",
-    "bossId": "6062588fecf5d57852bb6efe",
-    "wowId": 23065
+    "name": "The Face of Death",
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23043
 }

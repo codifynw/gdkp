@@ -27,8 +27,8 @@ const Raid = () => {
   async function requestTotalGold() {
     const res = await fetch(`/raids/${raidId}/gold`);
     const json = await res.json();
-    setTotalGold(json[0].total);
-    setSplit(json[0].total / 40);
+    setTotalGold(json[0].total.toLocaleString());
+    setSplit((json[0].total / 40).toLocaleString());
   }
 
   return (
@@ -51,11 +51,11 @@ const Raid = () => {
               </div>
               <div className="raid-stat">
                 <div className="raid-stat-key sub-guild">GOLD</div>
-                <div className="raid-stat-value guild-name">{totalGold}g</div>
+                <div className="raid-stat-value guild-name">{totalGold}</div>
               </div>
               <div className="raid-stat">
                 <div className="raid-stat-key sub-guild">SPLIT</div>
-                <div className="raid-stat-value guild-name">{split}g</div>
+                <div className="raid-stat-value guild-name">{split}</div>
               </div>
             </div>
           </div>
