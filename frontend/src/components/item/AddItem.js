@@ -61,35 +61,37 @@ const AddItem = ({ raidId, bossId }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      {/* <input type="text" placeholder="item" name="name" {...register("name")} /> */}
-      <input
-        type="text"
-        name="name"
-        label="Item"
-        autoComplete="off"
-        list={bossId}
-        {...register("name")}
-      />
-      <datalist id={bossId}>
-        {bossLoot.map((item) => (
-          <option key={item._id} value={item.name} data-value={item.wowId} />
-        ))}
-      </datalist>
-      <input
-        type="text"
-        placeholder="buyer"
-        name="buyer"
-        {...register("buyer")}
-      />
-      <input
-        type="number"
-        placeholder="price"
-        name="price"
-        {...register("price")}
-      />
-      <input type="submit" />
-    </form>
+    <div key={bossId}>
+      <form key={bossId} onSubmit={handleSubmit(onSubmit)}>
+        {/* <input type="text" placeholder="item" name="name" {...register("name")} /> */}
+        <input
+          type="text"
+          name="name"
+          label="Item"
+          autoComplete="off"
+          list={bossId}
+          {...register("name")}
+        />
+        <datalist id={bossId}>
+          {bossLoot.map((item, key) => (
+            <option key={key} value={item.name} data-value={item.wowId} />
+          ))}
+        </datalist>
+        <input
+          type="text"
+          placeholder="buyer"
+          name="buyer"
+          {...register("buyer")}
+        />
+        <input
+          type="number"
+          placeholder="price"
+          name="price"
+          {...register("price")}
+        />
+        <input type="submit" />
+      </form>
+    </div>
   );
 };
 
