@@ -355,3 +355,753 @@ bosses = {
     "__v": 0
   }
 ]
+
+
+
+
+// Faerlina
+{
+    "name": "Splinter of Atiesh",
+    "bossId": "60617e233bc3b72156e3e8ad",
+    "wowId": 22726
+},{
+    "name": "Desecrated Bracers",
+    "bossId": "60617e233bc3b72156e3e8ad",
+    "wowId": 22355
+},{
+    "name": "Desecrated Bindings",
+    "bossId": "60617e233bc3b72156e3e8ad",
+    "wowId": 22369
+},{
+    "name": "Desecrated Wristguards",
+    "bossId": "60617e233bc3b72156e3e8ad",
+    "wowId": 22362
+},{
+    "name": "Polar Shoulder Pads",
+    "bossId": "60617e233bc3b72156e3e8ad",
+    "wowId": 22941
+},{
+    "name": "Widow's Remorse",
+    "bossId": "60617e233bc3b72156e3e8ad",
+    "wowId": 22806
+},{
+    "name": "Icebane Pauldrons",
+    "bossId": "60617e233bc3b72156e3e8ad",
+    "wowId": 22940
+},{
+    "name": "Malice Stone Pendant",
+    "bossId": "60617e233bc3b72156e3e8ad",
+    "wowId": 22943
+},{
+    "name": "The Widow's Embrace",
+    "bossId": "60617e233bc3b72156e3e8ad",
+    "wowId": 22942
+}
+
+
+// Noth
+{
+    "name": "Splinter of Atiesh",
+    "bossId": "60624eadb3ecaf764a8fd160",
+    "wowId": 22726
+},{
+    "name": "Desecrated Girdle",
+    "bossId": "60624eadb3ecaf764a8fd160",
+    "wowId": 22363
+},{
+    "name": "Desecrated Belt",
+    "bossId": "60624eadb3ecaf764a8fd160",
+    "wowId": 22370
+},{
+    "name": "Desecrated Waistguard",
+    "bossId": "60624eadb3ecaf764a8fd160",
+    "wowId": 22356
+},{
+    "name": "Cloak of the Scourge",
+    "bossId": "60624eadb3ecaf764a8fd160",
+    "wowId": 23030
+},{
+    "name": "Noth's Frigid Heart",
+    "bossId": "60624eadb3ecaf764a8fd160",
+    "wowId": 23029
+},{
+    "name": "Band of the Inevitable",
+    "bossId": "60624eadb3ecaf764a8fd160",
+    "wowId": 23031
+},{
+    "name": "Hailstone Band",
+    "bossId": "60624eadb3ecaf764a8fd160",
+    "wowId": 23028
+},{
+    "name": "Hatchet of Sundered Bone",
+    "bossId": "60624eadb3ecaf764a8fd160",
+    "wowId": 22816
+},{
+    "name": "Libram of Light",
+    "bossId": "60624eadb3ecaf764a8fd160",
+    "wowId": 23006
+},{
+    "name": "Totem of Flowing Water",
+    "bossId": "60624eadb3ecaf764a8fd160",
+    "wowId": 23005
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// LOATHEB
+{
+    "name": "Splinter of Atiesh",
+    "bossId": "60625223b3ecaf764a8fd162",
+    "wowId": 22726
+},{
+    "name": "Desecrated Leggings",
+    "bossId": "60625223b3ecaf764a8fd162",
+    "wowId": 22366
+},{
+    "name": "Desecrated legguards",
+    "bossId": "60625223b3ecaf764a8fd162",
+    "wowId": 22359
+},{
+    "name": "Desecrated Legplates",
+    "bossId": "60625223b3ecaf764a8fd162",
+    "wowId": 22352
+},{
+    "name": "Band of Unnatural Forces",
+    "bossId": "60625223b3ecaf764a8fd162",
+    "wowId": 23038
+},{
+    "name": "Ring of Spiritual Fervor",
+    "bossId": "60625223b3ecaf764a8fd162",
+    "wowId": 23037
+},{
+    "name": "Brimstone Staff",
+    "bossId": "60625223b3ecaf764a8fd162",
+    "wowId": 22800
+},{
+    "name": "The Eye of Nerub",
+    "bossId": "60625223b3ecaf764a8fd162",
+    "wowId": 23039
+},{
+    "name": "Loatheb's Reflection",
+    "bossId": "60625223b3ecaf764a8fd162",
+    "wowId": 23042
+}
+
+
+
+
+
+
+
+
+// Maexxna
+{
+    "name": "Splinter of Atiesh",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 22726
+},{
+    "name": "Desecrated Gloves",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 22371
+},{
+    "name": "Desecrated Handguards",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 22364
+},{
+    "name": "Desecrated Gauntlets",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 22357
+},{
+    "name": "Kiss of the Spider",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 22954
+},{
+    "name": "Wraith Blade",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 22807
+},{
+    "name": "Pendant of Forgotten Names",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 22947
+},{
+    "name": "Maexxna's Fang",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 22804
+},{
+    "name": "Crystal Webbed Robe",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 23220
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Maexxna
+{
+    "name": "Splinter of Atiesh",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 22726
+},{
+    "name": "Desecrated Gloves",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 22371
+},{
+    "name": "Desecrated Handguards",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 22364
+},{
+    "name": "Desecrated Gauntlets",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 22357
+},{
+    "name": "Kiss of the Spider",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 22954
+},{
+    "name": "Wraith Blade",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 22807
+},{
+    "name": "Pendant of Forgotten Names",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 22947
+},{
+    "name": "Maexxna's Fang",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 22804
+},{
+    "name": "Crystal Webbed Robe",
+    "bossId": "60617ff33bc3b72156e3e8ae",
+    "wowId": 23220
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Instructor Razuv
+{
+    "name": "Splinter of Atiesh",
+    "bossId": "606254c1ecf5d57852bb6ef6",
+    "wowId": 22726
+},{
+    "name": "Desecrated Sandals",
+    "bossId": "606254c1ecf5d57852bb6ef6",
+    "wowId": 22372
+},{
+    "name": "Desecrated Boots",
+    "bossId": "606254c1ecf5d57852bb6ef6",
+    "wowId": 22365
+},{
+    "name": "Desecrated Sabatons",
+    "bossId": "606254c1ecf5d57852bb6ef6",
+    "wowId": 22358
+},{
+    "name": "Wand of the Whispering Dead",
+    "bossId": "606254c1ecf5d57852bb6ef6",
+    "wowId": 23009
+},{
+    "name": "Signet of the Fallen Defender",
+    "bossId": "606254c1ecf5d57852bb6ef6",
+    "wowId": 23018
+},{
+    "name": "Idol of Longevity",
+    "bossId": "606254c1ecf5d57852bb6ef6",
+    "wowId": 23004
+},{
+    "name": "Girdle of the Mentor",
+    "bossId": "606254c1ecf5d57852bb6ef6",
+    "wowId": 23219
+},{
+    "name": "Veil of Eclipse",
+    "bossId": "606254c1ecf5d57852bb6ef6",
+    "wowId": 23017
+},{
+    "name": "Iblis, Blade of the Fallen Seraph",
+    "bossId": "606254c1ecf5d57852bb6ef6",
+    "wowId": 23014
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Gothik
+{
+    "name": "Splinter of Atiesh",
+    "bossId": "60625513ecf5d57852bb6ef7",
+    "wowId": 22726
+},{
+    "name": "Desecrated Sandals",
+    "bossId": "60625513ecf5d57852bb6ef7",
+    "wowId": 22372
+},{
+    "name": "Desecrated Boots",
+    "bossId": "60625513ecf5d57852bb6ef7",
+    "wowId": 22365
+},{
+    "name": "Desecrated Sabatons",
+    "bossId": "60625513ecf5d57852bb6ef7",
+    "wowId": 22358
+},{
+    "name": "Boots of Displacement",
+    "bossId": "60625513ecf5d57852bb6ef7",
+    "wowId": 23073
+},{
+    "name": "Glacial Headdress",
+    "bossId": "60625513ecf5d57852bb6ef7",
+    "wowId": 23032
+},{
+    "name": "Polar Helmet",
+    "bossId": "60625513ecf5d57852bb6ef7",
+    "wowId": 23020
+},{
+    "name": "Sadist's Collar",
+    "bossId": "60625513ecf5d57852bb6ef7",
+    "wowId": 23023
+},{
+    "name": "The Soul Harvester's Bindings",
+    "bossId": "60625513ecf5d57852bb6ef7",
+    "wowId": 23021
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 4H
+{
+    "name": "Splinter of Atiesh",
+    "bossId": "606255cdecf5d57852bb6ef8",
+    "wowId": 22726
+},{
+    "name": "Desecrated Breastplate",
+    "bossId": "606255cdecf5d57852bb6ef8",
+    "wowId": 22349
+},{
+    "name": "Desecrated Robe",
+    "bossId": "606255cdecf5d57852bb6ef8",
+    "wowId": 22351
+},{
+    "name": "Desecrated Tunic",
+    "bossId": "606255cdecf5d57852bb6ef8",
+    "wowId": 22350
+},{
+    "name": "Corrupted Ashbringer",
+    "bossId": "606255cdecf5d57852bb6ef8",
+    "wowId": 22691
+},{
+    "name": "Leggings of Apocalypse",
+    "bossId": "606255cdecf5d57852bb6ef8",
+    "wowId": 23071
+},{
+    "name": "Maul of the Redeemed Crusade",
+    "bossId": "606255cdecf5d57852bb6ef8",
+    "wowId": 22809
+},{
+    "name": "Seal of the Damned",
+    "bossId": "606255cdecf5d57852bb6ef8",
+    "wowId": 23025
+},{
+    "name": "Soulstring",
+    "bossId": "606255cdecf5d57852bb6ef8",
+    "wowId": 22811
+},{
+    "name": "Warmth of Forgiveness",
+    "bossId": "606255cdecf5d57852bb6ef8",
+    "wowId": 23027
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Patchwerk 
+{
+    "name": "Splinter of Atiesh",
+    "bossId": "60625606ecf5d57852bb6ef9",
+    "wowId": 22726
+},{
+    "name": "Desecrated Shoulderpads",
+    "bossId": "60625606ecf5d57852bb6ef9",
+    "wowId": 22368
+},{
+    "name": "Desecrated Pauldrons",
+    "bossId": "60625606ecf5d57852bb6ef9",
+    "wowId": 22354
+},{
+    "name": "Desecrated Spaulders",
+    "bossId": "60625606ecf5d57852bb6ef9",
+    "wowId": 22361
+},{
+    "name": "Cloak of Suturing",
+    "bossId": "60625606ecf5d57852bb6ef9",
+    "wowId": 22960
+},{
+    "name": "Wand of Fates",
+    "bossId": "60625606ecf5d57852bb6ef9",
+    "wowId": 22820
+},{
+    "name": "Band of Reanimation",
+    "bossId": "60625606ecf5d57852bb6ef9",
+    "wowId": 22961
+},{
+    "name": "Severance",
+    "bossId": "60625606ecf5d57852bb6ef9",
+    "wowId": 22815
+},{
+    "name": "The Plague Bearer",
+    "bossId": "60625606ecf5d57852bb6ef9",
+    "wowId": 22818
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Grob 
+{
+    "name": "Splinter of Atiesh",
+    "bossId": "60625633ecf5d57852bb6efa",
+    "wowId": 22726
+},{
+    "name": "Desecrated Shoulderpads",
+    "bossId": "60625633ecf5d57852bb6efa",
+    "wowId": 22368
+},{
+    "name": "Desecrated Pauldrons",
+    "bossId": "60625633ecf5d57852bb6efa",
+    "wowId": 22354
+},{
+    "name": "Desecrated Spaulders",
+    "bossId": "60625633ecf5d57852bb6efa",
+    "wowId": 22361
+},{
+    "name": "Icy Scale Spaulders",
+    "bossId": "60625633ecf5d57852bb6efa",
+    "wowId": 22967
+},{
+    "name": "The End of Dreams",
+    "bossId": "60625633ecf5d57852bb6efa",
+    "wowId": 22988
+},{
+    "name": "Toxin Injector",
+    "bossId": "60625633ecf5d57852bb6efa",
+    "wowId": 22810
+},{
+    "name": "Midnight Haze",
+    "bossId": "60625633ecf5d57852bb6efa",
+    "wowId": 22803
+},{
+    "name": "Glacial Mantle",
+    "bossId": "60625633ecf5d57852bb6efa",
+    "wowId": 22968
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Gluth -  60625685ecf5d57852bb6efb 
+{
+    "name": "Gluth's Missing Collar",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22981
+},{
+    "name": "Claymore of Unholy Might",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22813
+},{
+    "name": "Digested Hand of Power",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22994
+},{
+    "name": "Death's Bargain",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 23075
+},{
+    "name": "Rime Covered Mantle",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22983
+},{
+    "name": "Desecrated Shoulderpads",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22368
+},{
+    "name": "Desecrated Pauldrons",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22354
+},{
+    "name": "Desecrated Spaulders",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22361
+},{
+    "name": "Desecrated Sandals",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22372
+},{
+    "name": "Desecrated Boots",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22365
+},{
+    "name": "Desecrated Sabatons",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22358
+},{
+    "name": "Desecrated Girdle",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22363
+},{
+    "name": "Desecrated Belt",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22370
+},{
+    "name": "Desecrated Waistguard",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22356
+},{
+    "name": "Desecrated Bracers",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22355
+},{
+    "name": "Desecrated Bindings",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22369
+},{
+    "name": "Desecrated Wristguards",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22362
+},{
+    "name": "Desecrated Belt",
+    "bossId": "60625685ecf5d57852bb6efb",
+    "wowId": 22370
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Thaddius 
+{
+    "name": "Desecrated Helmet",
+    "bossId": "606256cfecf5d57852bb6efc",
+    "wowId": 22353
+},{
+    "name": "Desecrated Circlet",
+    "bossId": "606256cfecf5d57852bb6efc",
+    "wowId": 22367
+},{
+    "name": "Desecrated Headpiece",
+    "bossId": "606256cfecf5d57852bb6efc",
+    "wowId": 22360
+},{
+    "name": "Leggings of Polarity",
+    "bossId": "606256cfecf5d57852bb6efc",
+    "wowId": 23070
+},{
+    "name": "Spire of Twilight",
+    "bossId": "606256cfecf5d57852bb6efc",
+    "wowId": 22801
+},{
+    "name": "Eye of Diminution",
+    "bossId": "606256cfecf5d57852bb6efc",
+    "wowId": 23001
+},{
+    "name": "Plated Abomination Ribcage",
+    "bossId": "606256cfecf5d57852bb6efc",
+    "wowId": 23000
+},{
+    "name": "The Castigator",
+    "bossId": "606256cfecf5d57852bb6efc",
+    "wowId": 22808
+},{
+    "name": "",
+    "bossId": "606256cfecf5d57852bb6efc",
+    "wowId": 22968
+}
+
+
+
+
+
+
+
+
+
+// Saph 60625818ecf5d57852bb6efd 
+{
+    "name": "Fortitude of the Scourge",
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23549
+},{
+    "name": "Power of the Scourge",
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23545
+},{
+    "name": "Resilience of the Scourge",
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23547
+},{
+    "name": "Might of the Scourge",
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23548
+},{
+    "name": "Cloak of the Necropolis",
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23050
+},{
+    "name": "Eye of the Dead",
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23047
+},{
+    "name": "Glyph of Deflection",
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23040
+},{
+    "name": "Slayer's Crest",
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23041
+},{
+    "name": "Claw of the Frost Wyrm",
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23242
+},{
+    "name": "Shroud of Dominion",
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23045
+},{
+    "name": "The Restrained Essence of Sapphiron",
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23046
+},{
+    "name": "Sapphiron's Left Eye",
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23049
+},{
+    "name": "Sapphiron's Right Eye",
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23048
+},{
+    "name": "The Face of Death",
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23043
+}
+
+
+
+
+
