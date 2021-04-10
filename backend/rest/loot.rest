@@ -20,9 +20,9 @@ POST http://localhost:5000/loot
 Content-Type: application/json
 
 {
-    "buyer": "Butteredrice",
-    "price": 6,
+    "buyer": "Tapping",
+    "price": 1100,
     "raidId": "6062b56dff6f03856f196fe8",
-    "bossId": "60625223b3ecaf764a8fd162",
-    "wowId": 23038
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23545
 }

@@ -91,7 +91,7 @@ router.get("/:id/loot", getLoot, (req, res) => {
 router.get("/:id/gold", getLoot, (req, res) => {
   Loot.aggregate(
     [
-      { $match: { raidId: new mongoose.Types.ObjectId(req.params.id) } },      
+      { $match: { raidId: new mongoose.Types.ObjectId(req.params.id) } },
       {
         $group: {
           _id: "$raidId",
@@ -112,6 +112,13 @@ router.get("/:id/gold", getLoot, (req, res) => {
 
 });
 
+
+// GET LEADERS IN RAID
+router.get("/:id/leaders", getLeaders, async (req, res) => {
+  res.json(res.leaders);
+});
+
+
 async function getRaid(req, res, next) {
   let raid;
   try {
@@ -120,7 +127,7 @@ async function getRaid(req, res, next) {
       return res.status(404).json({ message: "Cannot find raid" });
     }
   } catch (error) {
-    console.log("ERROR ERROR");
+    console.log("ERROR ERROR getRaid");
     return res.status(500).json({ message: error.message });
   }
 
@@ -140,7 +147,7 @@ async function getBosses(req, res, next) {
       return res.status(404).json({ message: "Cannot find bosses" });
     }
   } catch (error) {
-    console.log("ERROR ERROR");
+    console.log("ERROR ERROR getBosses");
     return res.status(500).json({ message: error.message });
   }
 
@@ -162,7 +169,7 @@ async function getLoot(req, res, next) {
       return res.status(404).json({ message: "Cannot find loot" });
     }
   } catch (error) {
-    console.log("ERROR ERROR");
+    console.log("ERROR ERROR getLoot");
     return res.status(500).json({ message: error.message });
   }
 
@@ -170,6 +177,54 @@ async function getLoot(req, res, next) {
   next();
 }
 
+
+// GET LEADERS
+async function getLeaders(req, res, next) {
+  let leaders;
+  let raidId = req.params.id;
+
+  try {
+    leaders = await Loot.aggregate(
+      [
+        { $match: { raidId: new mongoose.Types.ObjectId(req.params.id) } },
+        {
+          $group: {
+            _id: "$buyer",
+            total: {
+              $sum: "$price"
+            }
+          },
+        },
+        { $sort: { total: -1 } },
+        { "$limit": 5 },
+        
+          // Grouping pipeline
+          // { $match: { raidId: new mongoose.Types.ObjectId(raidId) } },
+          // { $group: { 
+          //     "buyer": $buyer, 
+          //     "spent": $price
+          // }},
+          // Optionally limit results
+      ],
+      
+      function(err, result) {
+        if (err) {
+          console.log('error in getLeaders')
+          res.send(err);
+          console.log('error in getLeaders')
+        } else {
+          res.json(result);
+        }
+      }
+    );
+  } catch (error) {
+    console.log("ERROR ERROR getLeaders");
+    return res.status(500).json({ message: error.message });
+  }
+
+  res.leaders = leaders;
+  next();
+}
 
 // GET BLIZZARD DATA FOR LOOT
 async function getBlizzardData(req, res, next) {

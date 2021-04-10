@@ -114,7 +114,7 @@ async function getLoot(req, res, next) {
       return res.status(404).json({ message: "Cannot find loot" });
     }
   } catch (error) {
-    console.log("ERROR ERROR");
+    console.log("ERROR ERROR getLoot");
     return res.status(500).json({ message: error.message });
   }
 

@@ -37,9 +37,10 @@ html {
 }
 
 .item-row .item-name {
-  max-width: 150px;
+  max-width: 180px;
   color: white;
   white-space: nowrap;
+  overflow: auto;
   text-overflow: ellipsis;
 }
 

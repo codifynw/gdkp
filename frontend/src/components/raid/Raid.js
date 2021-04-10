@@ -6,6 +6,7 @@ const Raid = () => {
   const [bosses, setBosses] = useState([]);
   const [totalGold, setTotalGold] = useState(0);
   const [split, setSplit] = useState(0);
+  const [leaders, setLeaders] = useState([]);
   let raidId = "6062b56dff6f03856f196fe8";
 
   useEffect(() => {
@@ -16,12 +17,23 @@ const Raid = () => {
     requestTotalGold();
   }, [0]);
 
+  useEffect(() => {
+    requestLeaders();
+  }, []);
+
   let beNiceString = "<BE NICE>";
 
   async function requestBosses() {
     const res = await fetch("/bosses");
     const json = await res.json();
     setBosses(json);
+  }
+
+  async function requestLeaders() {
+    const res = await fetch(`/raids/${raidId}/leaders`);
+    const json = await res.json();
+    console.log("leadersleadersleaders: ", json);
+    setLeaders(json);
   }
 
   async function requestTotalGold() {
@@ -85,6 +97,20 @@ const Raid = () => {
       <div className="leaderboard-title-wrap">
         <div className="decorator bar-1"></div>
         <div className="section-title large">LEADERBOARD</div>
+        {!leaders.length ? (
+          <h2>No Leaders Yet</h2>
+        ) : (
+          <div className="leaderboard-list">
+            {leaders.map((leader) => (
+              <div className="list-item" key={leader._id}>
+                <div className="list-cell result-name">{leader._id}</div>
+                <div className="list-cell result-amount">
+                  {leader.total.toLocaleString()}g
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
         <div className="decorator bar-1 decorator-below"></div>
       </div>
 

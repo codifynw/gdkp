@@ -38,6 +38,11 @@ GET http://localhost:5000/raids/6062b56dff6f03856f196fe8/loot/60601f16ad3e1608f9
 Content-Type: application/json
 
 
+### GET LEADERBOARD
+GET http://localhost:5000/raids/6062b56dff6f03856f196fe8/leaders
+Content-Type: application/json
+
+
 ### GET ALL GOLD FROM ALL LOOT FROM SPECIFIC RAID
 GET http://localhost:5000/raids/6062b56dff6f03856f196fe8/gold
 Content-Type: application/json
