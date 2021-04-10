@@ -27,45 +27,46 @@ router.get("/:id", getRaid, (req, res) => {
   res.json(res.raid);
 });
 
+// BEFORE DEMO 
 // CREATE
-router.post("/", async (req, res) => {
-  const raid = new Raid({
-    title: req.body.title,
-    time: req.body.time,
-    encounterId: req.body.encounterId,
-    leaderId: req.body.leaderId,
-  });
+// router.post("/", async (req, res) => {
+//   const raid = new Raid({
+//     title: req.body.title,
+//     time: req.body.time,
+//     encounterId: req.body.encounterId,
+//     leaderId: req.body.leaderId,
+//   });
 
-  try {
-    const newRaid = await raid.save();
-    res.status(201).json(newRaid);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-});
+//   try {
+//     const newRaid = await raid.save();
+//     res.status(201).json(newRaid);
+//   } catch (error) {
+//     res.status(400).json({ message: error.message });
+//   }
+// });
 
-// UPDATE
-router.patch("/:id", getRaid, async (req, res) => {
-  if (req.body.slug != null) {
-    res.subscriber.slug = req.body.slug;
-  }
-  try {
-    const updatedRaid = await res.raid.save();
-    res.json(updatedRaid);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-});
+// // UPDATE
+// router.patch("/:id", getRaid, async (req, res) => {
+//   if (req.body.slug != null) {
+//     res.subscriber.slug = req.body.slug;
+//   }
+//   try {
+//     const updatedRaid = await res.raid.save();
+//     res.json(updatedRaid);
+//   } catch (error) {
+//     res.status(400).json({ message: error.message });
+//   }
+// });
 
-// DELETE
-router.delete("/:id", getRaid, async (req, res) => {
-  try {
-    await res.raid.remove();
-    res.json({ message: "Deleted Raid" });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
+// // DELETE
+// router.delete("/:id", getRaid, async (req, res) => {
+//   try {
+//     await res.raid.remove();
+//     res.json({ message: "Deleted Raid" });
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// });
 
 // GET BOSSES IN RAID
 router.get("/:id/bosses", getRaid, getBosses, (req, res) => {
@@ -228,21 +229,21 @@ async function getLeaders(req, res, next) {
 }
 
 // GET BLIZZARD DATA FOR LOOT
-async function getBlizzardData(req, res, next) {
-  if (res.loot === null) {
-    next()
-  }
+// async function getBlizzardData(req, res, next) {
+//   if (res.loot === null) {
+//     next()
+//   }
 
-  await Promise.all(res.loot.map(async (lootItem) => {
-    console.log('add blizzData')
-    lootItem.blizzData = {};
-    if (lootItem.wowId !== null) {
-      lootItem.blizzData = await BnetApi.query(`/data/wow/item/${lootItem.wowId}?namespace=static-classic-us&locale=en_US`)
-    }
-  }));
+//   await Promise.all(res.loot.map(async (lootItem) => {
+//     console.log('add blizzData')
+//     lootItem.blizzData = {};
+//     if (lootItem.wowId !== null) {
+//       lootItem.blizzData = await BnetApi.query(`/data/wow/item/${lootItem.wowId}?namespace=static-classic-us&locale=en_US`)
+//     }
+//   }));
   
-  next()
-}
+//   next()
+// }
 
 
 module.exports = router;

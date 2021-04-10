@@ -58,7 +58,7 @@ const Raid = () => {
             <div className="raid-stats-wrap">
               <div className="raid-stat">
                 <div className="raid-stat-key sub-guild">BOSSES</div>
-                <div className="raid-stat-value guild-name">1/15</div>
+                <div className="raid-stat-value guild-name">15/15</div>
               </div>
               <div className="raid-stat">
                 <div className="raid-stat-key sub-guild">GOLD</div>

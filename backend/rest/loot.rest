@@ -2,27 +2,53 @@
 GET http://localhost:5000/loot
 
 ### GET ONE
-GET http://localhost:5000/loot/
+GET http://localhost:5000/loot/6070a0296c37b243c46d74a9
 
 ### DELETE ONE
 DELETE http://localhost:5000/loot/60709cb5a4004141f7591cf8
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### UPDATE ONE
-PATCH http://localhost:5000/loot/60709c6fa4004141f7591cf6
+PATCH http://localhost:5000/loot/6071f5a64a82f36a05ad9b73
 Content-Type: application/json
 
 {
-    "bossId": "60617e233bc3b72156e3e8ad"
+    "name": "Idol of Longevity"
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### CREATE ONE
 POST http://localhost:5000/loot
 Content-Type: application/json
 
 {
-    "buyer": "Tapping",
-    "price": 1100,
+    "buyer": "Earthwarden",
+    "price": 400,
     "raidId": "6062b56dff6f03856f196fe8",
-    "bossId": "60625818ecf5d57852bb6efd",
-    "wowId": 23545
+    "bossId": "60625513ecf5d57852bb6ef7",
+    "wowId": 22365
 }

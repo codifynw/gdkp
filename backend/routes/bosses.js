@@ -25,45 +25,46 @@ router.get("/:id/lootTable", getBoss, (req, res) => {
   res.json(res.boss);
 });
 
+// COMMENTING BELOW BEFORE DEMO
 // CREATE
-router.post("/", async (req, res) => {
-  const boss = new Boss({
-    name: req.body.name,
-    wowId: req.body.wowId,
-    image: req.body.image,
-    encounterId: req.body.encounterId,
-  });
+// router.post("/", async (req, res) => {
+//   const boss = new Boss({
+//     name: req.body.name,
+//     wowId: req.body.wowId,
+//     image: req.body.image,
+//     encounterId: req.body.encounterId,
+//   });
 
-  try {
-    const newBoss = await boss.save();
-    res.status(201).json(newBoss);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-});
+//   try {
+//     const newBoss = await boss.save();
+//     res.status(201).json(newBoss);
+//   } catch (error) {
+//     res.status(400).json({ message: error.message });
+//   }
+// });
 
-// UPDATE
-router.patch("/:id", getBoss, async (req, res) => {
-  if (req.body.name != null) {
-    res.boss.name = req.body.name;
-  }
-  try {
-    const updatedBoss = await res.boss.save();
-    res.json(updatedBoss);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-});
+// // UPDATE
+// router.patch("/:id", getBoss, async (req, res) => {
+//   if (req.body.name != null) {
+//     res.boss.name = req.body.name;
+//   }
+//   try {
+//     const updatedBoss = await res.boss.save();
+//     res.json(updatedBoss);
+//   } catch (error) {
+//     res.status(400).json({ message: error.message });
+//   }
+// });
 
-// DELETE
-router.delete("/:id", getBoss, async (req, res) => {
-  try {
-    await res.boss.remove();
-    res.json({ message: "Deleted Boss" });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
+// // DELETE
+// router.delete("/:id", getBoss, async (req, res) => {
+//   try {
+//     await res.boss.remove();
+//     res.json({ message: "Deleted Boss" });
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// });
 
 async function getBoss(req, res, next) {
   let boss;
