@@ -21,7 +21,7 @@ POST http://localhost:5000/items
 Content-Type: application/json
 
 {
-    "name": "Plated Abomination Ribcage",
-    "wowId": 23000,
-    "bossId": "606256cfecf5d57852bb6efc"
+    "name": "Necklace of Necropsy",
+    "bossId": "60625818ecf5d57852bb6efd",
+    "wowId": 23036
 }

@@ -11,7 +11,6 @@ const BnetApi = new BlizzAPI({
 
 // GET ALL
 router.get("/", getAllLoot, getBlizzardData, async (req, res) => {
-  console.log('lootItem.blizzData should be defined')
   res.json(res.loot);
 });
 

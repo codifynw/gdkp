@@ -240,8 +240,6 @@ async function getBlizzardData(req, res, next) {
     }
   }));
   
-  console.log('go next with res:')
-  console.log(res)
   next()
 }
 

@@ -96,3 +96,8 @@
 .list-cell.result-amount {
   color: #ebbc75;
 }
+
+.bottom-decorators {
+  position: relative;
+  margin-top: -300px;
+}

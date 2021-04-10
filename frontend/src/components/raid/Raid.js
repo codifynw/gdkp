@@ -32,7 +32,6 @@ const Raid = () => {
   async function requestLeaders() {
     const res = await fetch(`/raids/${raidId}/leaders`);
     const json = await res.json();
-    console.log("leadersleadersleaders: ", json);
     setLeaders(json);
   }
 
@@ -114,9 +113,11 @@ const Raid = () => {
         <div className="decorator bar-1 decorator-below"></div>
       </div>
 
-      <div className="corner-decorators">
-        <div className="corner-decorator bottom-left"></div>
-        <div className="corner-decorator bottom-right"></div>
+      <div className="bottom-decorators">
+        <div className="corner-decorators">
+          <div className="corner-decorator bottom-left"></div>
+          <div className="corner-decorator bottom-right"></div>
+        </div>
       </div>
     </div>
   );

@@ -1035,8 +1035,45 @@ bosses = {
 }
 
 
+// Heigan 606251f1b3ecaf764a8fd161"
 
-
+{
+    "name": "Splinter of Atiesh",
+    "bossId": "606251f1b3ecaf764a8fd161",
+    "wowId": 22726
+},{
+    "name": "Desecrated Girdle",
+    "bossId": "606251f1b3ecaf764a8fd161",
+    "wowId": 22363
+},{
+    "name": "Desecrated Belt",
+    "bossId": "606251f1b3ecaf764a8fd161",
+    "wowId": 22370
+},{
+    "name": "Desecrated Waistguard",
+    "bossId": "606251f1b3ecaf764a8fd161",
+    "wowId": 22356
+},{
+    "name": "Legplates of Carnage",
+    "bossId": "606251f1b3ecaf764a8fd161",
+    "wowId": 23068
+},{
+    "name": "Icy Scale Coif",
+    "bossId": "606251f1b3ecaf764a8fd161",
+    "wowId": 23033
+},{
+    "name": "Preceptor's Hat",
+    "bossId": "606251f1b3ecaf764a8fd161",
+    "wowId": 23035
+},{
+    "name": "Icebane Helmet",
+    "bossId": "606251f1b3ecaf764a8fd161",
+    "wowId": 23019
+},{
+    "name": "Necklace of Necropsy",
+    "bossId": "606251f1b3ecaf764a8fd161",
+    "wowId": 23036
+},
 
 
 
