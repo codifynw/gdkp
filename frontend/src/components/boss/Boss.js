@@ -54,8 +54,8 @@ const Boss = ({ name, image, raidId, bossId }) => {
                   price={lootItem.price}
                   key={lootItem._id}
                   wowId={lootItem.wowId}
-                  customName={lootItem.customName}
-                  name={lootItem.blizzData?.name}
+                  name={lootItem.name}
+                  blizzName={lootItem.blizzData?.name}
                 />
               ))}
               <AddItem raidId={raidId} bossId={bossId} key={bossId} />
@@ -69,8 +69,8 @@ const Boss = ({ name, image, raidId, bossId }) => {
                   price={lootItem.price}
                   key={lootItem._id}
                   wowId={lootItem.wowId}
-                  customName={lootItem.customName}
-                  name={lootItem.blizzData?.name}
+                  name={lootItem.name}
+                  blizzName={lootItem.blizzData?.name}
                 />
               ))}
             </div>

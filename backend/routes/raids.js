@@ -73,7 +73,8 @@ router.get("/:id/bosses", getRaid, getBosses, (req, res) => {
 });
 
 // GET LOOT BY BOSS
-router.get("/:id/loot/:bossId", getLoot, getBlizzardData, async (req, res) => {
+// router.get("/:id/loot/:bossId", getLoot, getBlizzardData, async (req, res) => {
+router.get("/:id/loot/:bossId", getLoot, async (req, res) => {
   console.log('GET LOOT BY BOSS')
   let bossId = req.params.bossId;
   res.loot = res.loot.filter(function (e) {

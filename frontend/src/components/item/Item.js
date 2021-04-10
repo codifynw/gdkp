@@ -1,7 +1,7 @@
 import React from "react";
 import "./item.css";
 
-const Item = ({ buyer, price, itemKey, wowId, customName, name }) => {
+const Item = ({ buyer, price, itemKey, wowId, name, blizzName }) => {
   return (
     <div key={itemKey} className="item-row">
       <a href={"http://www.classic.wowhead.com/item=" + wowId}>
